@@ -1,0 +1,189 @@
+color: null
+description: null
+fieldLayouts:
+  1350ec69-cdd9-42f9-87e6-ad2a84be2a08:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-11-24T20:04:57+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 02daa00e-fbb7-4eb8-a8f5-94f550eeb331
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-25T08:15:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 331539bf-f337-402c-b9cc-24ad01f1d9de # Short Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dfd5a565-edff-45cf-8655-d0b416290d90
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-25T08:15:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ee2824c3-8d7f-418a-b418-244c0e84e62f # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1d953cb0-be9b-415c-8b0b-a6ba2db6d2f7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-25T08:15:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d41bdc89-fe25-44f0-8d25-055ea6bbf491 # Hero Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e42d71fa-f3b2-4087-847d-98bdfc98a5fc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-25T08:15:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bbac927c-8f02-4c01-b787-5b93491ae2ed # Gallery
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6383bf0e-52e3-4d16-a63e-53a267d8478e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-25T08:15:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 31655d94-fba9-489d-8b4a-755a1be0aeed # Tech Stack
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 81ee5074-9f1c-4591-b79a-a78faa05b216
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-25T08:15:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5a2e10e5-d101-4b1e-8f49-e396385ff908 # Project URL
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72e3fed9-4425-4457-a511-066352d3d910
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-25T08:15:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 05d7ebc9-41b0-46e0-a54f-179adea38497 # GitHub URL
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1c981cd6-a8c3-4400-a32a-6dfde113e734
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-25T08:15:07+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ec80f0-65f7-4d05-a156-a18331c71227 # Publish Date
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6703dee0-3e7f-4d53-a5c5-27c9956c7587
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 68ee9007-f318-4f5b-9ca4-67d960f90131
+        userCondition: null
+handle: project
+hasTitleField: true
+icon: null
+name: Project
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

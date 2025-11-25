@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: "Nico's portfolio"
+primary: true
+siteGroup: 48f457ea-f542-4b48-8ec2-448ace5af166 # Nico's portfolio
+sortOrder: 1

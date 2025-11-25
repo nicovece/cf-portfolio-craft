@@ -1,0 +1,53 @@
+dateModified: 1764061240
+email:
+  fromEmail: me@nicovece.com
+  fromName: "Nico's portfolio"
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  imagesFilesystem:
+    hasUrls: true
+    name: 'Images filesystem'
+    settings:
+      path: '@webroot/uploads/images'
+    type: craft\fs\Local
+    url: '@web/uploads/images'
+meta:
+  __names__:
+    0d1c4f38-976d-4e09-a24c-f887adea8c02: Project # Project
+    0f3e177e-7989-49e1-a2bb-7a2123210b95: Projects # Projects
+    1dd5fa5c-3c5c-4a62-9374-c106e5cd34c0: About # About
+    5a2e10e5-d101-4b1e-8f49-e396385ff908: 'Project URL' # Project URL
+    05d7ebc9-41b0-46e0-a54f-179adea38497: 'GitHub URL' # GitHub URL
+    48f457ea-f542-4b48-8ec2-448ace5af166: "Nico's portfolio" # Nico's portfolio
+    54ec80f0-65f7-4d05-a156-a18331c71227: 'Publish Date' # Publish Date
+    522e8e10-5cd3-4e4f-905e-6fbb9b08136c: "Nico's portfolio" # Nico's portfolio
+    912bb21d-11b7-4bee-a3ba-ad1551b083d3: Images # Images
+    4427e323-d8bf-49df-b4bf-200f75e4fd4c: Simple # Simple
+    31655d94-fba9-489d-8b4a-755a1be0aeed: 'Tech Stack' # Tech Stack
+    331539bf-f337-402c-b9cc-24ad01f1d9de: 'Short Description' # Short Description
+    a6ab6aee-25d2-4b00-a238-40d373adb443: About # About
+    a5510a5a-0f6c-4461-8b79-d08e132b167a: Contacts # Contacts
+    ab9f1dbe-56c8-4f49-b274-a7d8ebc3e4b7: Homepage # Homepage
+    b7ba979d-16bd-4395-9aad-196ce5bb038d: Hompage # Hompage
+    bbac927c-8f02-4c01-b787-5b93491ae2ed: Gallery # Gallery
+    d41bdc89-fe25-44f0-8d25-055ea6bbf491: 'Hero Image' # Hero Image
+    e326f135-ef60-4568-9162-6224f7492eaf: Contacts # Contacts
+    ee2824c3-8d7f-418a-b418-244c0e84e62f: Description # Description
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+system:
+  edition: solo
+  live: true
+  name: "Nico's portfolio"
+  schemaVersion: 5.8.0.3
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true
