@@ -1,4 +1,4 @@
-dateModified: 1764240056
+dateModified: 1764414370
 email:
   fromEmail: me@nicovece.com
   fromName: "Nico's portfolio"
@@ -13,27 +13,56 @@ fs:
     url: '@web/uploads/images'
 meta:
   __names__:
+    0cde3055-d952-46c0-8db8-6cb374162773: 'Content Sections' # Content Sections
     0d1c4f38-976d-4e09-a24c-f887adea8c02: Project # Project
+    0dd9c835-6b34-41d3-80be-1d3d7abbf3c4: Default # Default
+    0de2d201-8ab6-44fd-8462-fbbaadb76782: Overview # Overview
     0f3e177e-7989-49e1-a2bb-7a2123210b95: Projects # Projects
     1dd5fa5c-3c5c-4a62-9374-c106e5cd34c0: About # About
+    1f164e26-66e9-4f24-a3c8-22f85e2cd36c: 'Profile Image' # Profile Image
+    02a69196-df6c-400e-8f4f-2c7d620a6bcb: 'Section Title' # Section Title
+    2b95f2fc-a79a-4f0d-a8d7-95a871da11dc: Body # Body
     3d64e561-8a19-44d2-93bc-c83b592eeb06: Contact # Contact
+    3ec10970-9304-4c14-8c1b-18726aa141b9: 'Intro Text' # Intro Text
     4b88eb37-66fa-4ec1-bc90-0a62ee00369c: 'Social Links' # Social Links
+    4b405d36-d472-4146-811f-455fc1bbe9b3: 'Resume file' # Resume file
     4c83e388-34f9-47c8-b707-c453b63db60e: Settings # Settings
     5a2e10e5-d101-4b1e-8f49-e396385ff908: 'Project URL' # Project URL
     05d7ebc9-41b0-46e0-a54f-179adea38497: 'GitHub URL' # GitHub URL
+    8c98ef47-d18e-4c2b-8b6a-ae2c053463e0: 'Tech Item Name' # Tech Item Name
+    9cd3478c-7da1-42fb-9fd3-4a0422407e4c: Role # Role
+    9ec92f92-94ea-422b-bc57-2b4260e56705: Caption # Caption
     48f457ea-f542-4b48-8ec2-448ace5af166: "Nico's portfolio" # Nico's portfolio
     54ec80f0-65f7-4d05-a156-a18331c71227: 'Publish Date' # Publish Date
+    77bedc71-e756-4e7a-8811-39806cec98fc: 'Outro Text' # Outro Text
     522e8e10-5cd3-4e4f-905e-6fbb9b08136c: "Nico's portfolio" # Nico's portfolio
+    644ba065-ac47-45c6-9cc0-71261861bf23: 'TL;DR Text' # TL;DR Text
     912bb21d-11b7-4bee-a3ba-ad1551b083d3: Images # Images
     4427e323-d8bf-49df-b4bf-200f75e4fd4c: Simple # Simple
+    7589e2aa-2284-4e7e-92fc-e281a137f1c7: 'Text Section' # Text Section
     31655d94-fba9-489d-8b4a-755a1be0aeed: 'Tech Stack' # Tech Stack
+    85597cc0-9094-44d7-b720-fcdf26fb9f08: 'CSS Classes' # CSS Classes
     331539bf-f337-402c-b9cc-24ad01f1d9de: 'Short Description' # Short Description
+    953298f3-93bd-427c-885b-63aafc94d31b: Image # Image
+    77330588-beed-421e-8760-caee384f18bc: 'Callout Title' # Callout Title
+    a2d930ab-2201-4e51-89de-215501d8b37a: 'Alt Text' # Alt Text
     a6ab6aee-25d2-4b00-a238-40d373adb443: About # About
+    a677eac8-4b8d-45c6-9eaa-fb2a6d55fc90: 'Summary Text' # Summary Text
     a5510a5a-0f6c-4461-8b79-d08e132b167a: Contact # Contact
     ab9f1dbe-56c8-4f49-b274-a7d8ebc3e4b7: Homepage # Homepage
+    ab648d29-9a8e-42ce-8ce1-ea2b834f869a: 'Tech Stack Items' # Tech Stack Items
     b7ba979d-16bd-4395-9aad-196ce5bb038d: Hompage # Hompage
-    bbac927c-8f02-4c01-b787-5b93491ae2ed: Gallery # Gallery
+    be37f4aa-639d-4cd2-b5ce-80acd5061e78: 'Tech Item' # Tech Item
+    cdba1535-dc8b-460e-b34a-2c489560a09d: Gallery # Gallery
+    cfab234a-4b91-456b-aec1-d6e553fd5e03: 'Gallery Item' # Gallery Item
+    cfd6dc66-37b4-4d63-9fe9-a7ff90dc5847: 'Tech Item Category' # Tech Item Category
+    d7a8dc1d-82f0-457c-bcbb-69a08a9d31e7: Context # Context
     d41bdc89-fe25-44f0-8d25-055ea6bbf491: 'Hero Image' # Hero Image
+    d279a878-3e10-41ab-a412-dd45ff93f6bb: 'Is Collapsible' # Is Collapsible
+    d330fe93-be16-4abc-ad3f-451ccbbb69b5: 'Image Section' # Image Section
+    dc423ad9-f1dd-4b89-8f72-b8dd4ed977d2: Content # Content
+    e00ea223-31b3-4b51-94d3-da88a01f7773: 'Callout Text' # Callout Text
+    ece825c7-5d9b-4ecc-818e-878171b7526c: 'Tech Item Description' # Tech Item Description
     ee2824c3-8d7f-418a-b418-244c0e84e62f: Description # Description
 plugins:
   ckeditor:

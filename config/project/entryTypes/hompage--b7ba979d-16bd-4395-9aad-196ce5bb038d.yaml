@@ -37,8 +37,99 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
+          -
+            dateAdded: '2025-11-27T16:52:53+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3ec10970-9304-4c14-8c1b-18726aa141b9 # Intro Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e073ee6f-6540-4e9a-93ca-66a98e3f10de
+            userCondition: null
+            warning: null
+            width: 100
+        name: Hero
         uid: 65648b33-5e2b-4e79-b6e5-e9f790a5587a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-27T16:52:53+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 1f164e26-66e9-4f24-a3c8-22f85e2cd36c # Profile Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c08e72c7-714f-4c30-862a-82ed0c2a0897
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-27T16:52:53+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 77330588-beed-421e-8760-caee384f18bc # Callout Title
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 588413b0-35cd-4df2-a054-021d69175a81
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-27T16:52:53+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e00ea223-31b3-4b51-94d3-da88a01f7773 # Callout Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d2320e67-c3d2-43c5-b286-49256a5acedc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-27T16:52:53+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4b405d36-d472-4146-811f-455fc1bbe9b3 # Resume file
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e639b13e-02ea-4b3b-85e9-b9c62bed0490
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'About Box'
+        uid: e515aa84-8019-4078-92c6-596bcc034b02
         userCondition: null
 handle: hompage
 hasTitleField: true

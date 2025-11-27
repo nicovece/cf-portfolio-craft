@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: resumeFile
+instructions: 'PDF resume for download'
+name: 'Resume file'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - pdf
+  branchLimit: null
+  defaultPlacement: end
+  defaultUploadLocationSource: 'volume:912bb21d-11b7-4bee-a3ba-ad1551b083d3' # Images
+  defaultUploadLocationSubpath: null
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:912bb21d-11b7-4bee-a3ba-ad1551b083d3' # Images
+  restrictedLocationSubpath: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets
