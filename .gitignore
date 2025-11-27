@@ -27,3 +27,6 @@ Thumbs.db
 # Optional: Uploads (uncomment if you want uploads in Git)
 # /web/uploads/*
 # !/web/uploads/.gitkeep
+
+# 
+/autoscripts

@@ -1,0 +1,13 @@
+{% extends '_layouts/base.twig' %}
+
+{% block title %}
+	{{ entry.title }} - {{ siteName }}
+{% endblock %}
+
+{% block content %}
+	<article class="mx-auto max-w-6xl px-4 py-8">
+		<h1>{{ entry.title }}</h1>
+		{# Content will go here #}
+	</article>
+{% endblock %}
+
