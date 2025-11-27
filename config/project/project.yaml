@@ -1,4 +1,4 @@
-dateModified: 1764764938
+dateModified: 1765024984
 email:
   fromEmail: me@nicovece.com
   fromName: "Nico's portfolio"
@@ -29,12 +29,14 @@ meta:
     4b405d36-d472-4146-811f-455fc1bbe9b3: 'Resume file' # Resume file
     4c4f49ff-75d7-4c45-8a5b-464e45dd4a46: w1600 # w1600
     4c83e388-34f9-47c8-b707-c453b63db60e: 'Social Links Settings' # Social Links Settings
+    5a2c57a5-2e47-4f21-88f6-e98df39a1b3a: 'Is Subsection' # Is Subsection
     5a2e10e5-d101-4b1e-8f49-e396385ff908: 'Project URL' # Project URL
     05d7ebc9-41b0-46e0-a54f-179adea38497: 'GitHub URL' # GitHub URL
     5edaa549-5b99-4c40-b79d-7689afdd7924: 'Modal Image' # Modal Image
     8c98ef47-d18e-4c2b-8b6a-ae2c053463e0: 'Tech Item Name' # Tech Item Name
     9cd3478c-7da1-42fb-9fd3-4a0422407e4c: Role # Role
     9ec92f92-94ea-422b-bc57-2b4260e56705: Caption # Caption
+    19a0c149-8e70-447e-bd63-649c8095c65c: Impressum # Impressum
     48f457ea-f542-4b48-8ec2-448ace5af166: "Nico's portfolio" # Nico's portfolio
     54ec80f0-65f7-4d05-a156-a18331c71227: 'Publish Date' # Publish Date
     77bedc71-e756-4e7a-8811-39806cec98fc: 'Outro Text' # Outro Text
@@ -59,6 +61,8 @@ meta:
     ab648d29-9a8e-42ce-8ce1-ea2b834f869a: 'Tech Stack Items' # Tech Stack Items
     b7ba979d-16bd-4395-9aad-196ce5bb038d: Hompage # Hompage
     be37f4aa-639d-4cd2-b5ce-80acd5061e78: 'Tech Item' # Tech Item
+    c2a731eb-14da-4641-a0b9-b2eb89a0d34e: Impressum # Impressum
+    c67aace5-253d-4af7-a1f1-955fcf30240e: 'Help text' # Help text
     cdba1535-dc8b-460e-b34a-2c489560a09d: Gallery # Gallery
     cfab234a-4b91-456b-aec1-d6e553fd5e03: 'Gallery Item' # Gallery Item
     cfd6dc66-37b4-4d63-9fe9-a7ff90dc5847: 'Tech Item Category' # Tech Item Category
