@@ -1,4 +1,4 @@
-dateModified: 1764073951
+dateModified: 1764240056
 email:
   fromEmail: me@nicovece.com
   fromName: "Nico's portfolio"
@@ -16,6 +16,9 @@ meta:
     0d1c4f38-976d-4e09-a24c-f887adea8c02: Project # Project
     0f3e177e-7989-49e1-a2bb-7a2123210b95: Projects # Projects
     1dd5fa5c-3c5c-4a62-9374-c106e5cd34c0: About # About
+    3d64e561-8a19-44d2-93bc-c83b592eeb06: Contact # Contact
+    4b88eb37-66fa-4ec1-bc90-0a62ee00369c: 'Social Links' # Social Links
+    4c83e388-34f9-47c8-b707-c453b63db60e: Settings # Settings
     5a2e10e5-d101-4b1e-8f49-e396385ff908: 'Project URL' # Project URL
     05d7ebc9-41b0-46e0-a54f-179adea38497: 'GitHub URL' # GitHub URL
     48f457ea-f542-4b48-8ec2-448ace5af166: "Nico's portfolio" # Nico's portfolio
@@ -26,12 +29,11 @@ meta:
     31655d94-fba9-489d-8b4a-755a1be0aeed: 'Tech Stack' # Tech Stack
     331539bf-f337-402c-b9cc-24ad01f1d9de: 'Short Description' # Short Description
     a6ab6aee-25d2-4b00-a238-40d373adb443: About # About
-    a5510a5a-0f6c-4461-8b79-d08e132b167a: Contacts # Contacts
+    a5510a5a-0f6c-4461-8b79-d08e132b167a: Contact # Contact
     ab9f1dbe-56c8-4f49-b274-a7d8ebc3e4b7: Homepage # Homepage
     b7ba979d-16bd-4395-9aad-196ce5bb038d: Hompage # Hompage
     bbac927c-8f02-4c01-b787-5b93491ae2ed: Gallery # Gallery
     d41bdc89-fe25-44f0-8d25-055ea6bbf491: 'Hero Image' # Hero Image
-    e326f135-ef60-4568-9162-6224f7492eaf: Contacts # Contacts
     ee2824c3-8d7f-418a-b418-244c0e84e62f: Description # Description
 plugins:
   ckeditor:

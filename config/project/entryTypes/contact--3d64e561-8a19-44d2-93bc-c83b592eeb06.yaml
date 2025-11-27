@@ -1,7 +1,7 @@
 color: null
 description: null
 fieldLayouts:
-  73b0b0d2-3fc3-4a74-a455-d44f141f10ae:
+  8bc0e4fe-09f7-4f0e-bea2-6cf9542a3c80:
     cardThumbAlignment: end
     tabs:
       -
@@ -12,7 +12,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2025-11-25T08:59:25+00:00'
+            dateAdded: '2025-11-27T08:33:49+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -33,17 +33,17 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: d6a72edc-046f-4b1d-85c0-c15a0e60e34a
+            uid: 8b50f649-b5ca-4cd2-89b4-8d886835e2ab
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: cb24f31d-9805-4531-9d86-7fa0c61ed5bb
+        uid: dd8d2a99-ae9d-4398-afaa-32332eb010b5
         userCondition: null
-handle: contacts
+handle: contact
 hasTitleField: true
 icon: null
-name: Contacts
+name: Contact
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

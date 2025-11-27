@@ -2,10 +2,10 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: e326f135-ef60-4568-9162-6224f7492eaf # Contacts
-handle: contacts
+    uid: 3d64e561-8a19-44d2-93bc-c83b592eeb06 # Contact
+handle: contact
 maxAuthors: 1
-name: Contacts
+name: Contact
 previewTargets:
   -
     label: 'Primary entry page'
@@ -16,6 +16,6 @@ siteSettings:
   522e8e10-5cd3-4e4f-905e-6fbb9b08136c: # Nico's portfolio
     enabledByDefault: true
     hasUrls: true
-    template: contacts/_entry.twig
-    uriFormat: contacts
+    template: contact/_entry.twig
+    uriFormat: contact
 type: single
