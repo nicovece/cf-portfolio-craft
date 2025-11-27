@@ -1,0 +1,37 @@
+{% import '_macros' as macros %}
+<site-nav>
+	<header
+		data-header
+		class="flex items-center bg-white px-4 py-4 md:px-8 lg:px-12 [&.menu-open]:fixed [&.menu-open]:inset-0 [&.menu-open]:z-50 [&.menu-open]:flex-col [&.menu-open]:items-start md:[&.menu-open]:relative md:[&.menu-open]:flex-row md:[&.menu-open]:items-center"
+	>
+		{# Logo - always visible #}
+		<a href="{{ siteUrl }}" class="z-10 border-b-4 border-transparent text-lg font-medium text-black">
+			<strong>Nico</strong>
+		</a>
+
+		{# Mobile menu button - hidden on md+ #}
+		<button data-menu-toggle class="z-10 cursor-pointer p-2 md:hidden" aria-label="Toggle menu">
+			{# Hamburger icon - visible when closed #}
+			<svg class="h-6 w-6 [.menu-open_&]:hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+			</svg>
+
+			{# X icon - visible when open #}
+			<svg class="hidden h-6 w-6 [.menu-open_&]:block" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+			</svg>
+		</button>
+
+		{# Navigation links #}
+		<nav
+			class="hidden md:relative md:inset-auto md:flex md:flex-row [.menu-open_&]:absolute [.menu-open_&]:inset-0 [.menu-open_&]:flex [.menu-open_&]:flex-col [.menu-open_&]:items-center [.menu-open_&]:justify-center"
+		>
+			{% set currentSegment = craft.app.request.segments|first %}
+			<ul class="flex flex-col items-center gap-6 md:flex-row md:gap-4">
+				<li>{{ macros.navLink(url('projects'), 'Projects', currentSegment) }}</li>
+				<li>{{ macros.navLink(url('about'), 'About', currentSegment) }}</li>
+				<li>{{ macros.navLink(url('contact'), 'Contact', currentSegment) }}</li>
+			</ul>
+		</nav>
+	</header>
+</site-nav>

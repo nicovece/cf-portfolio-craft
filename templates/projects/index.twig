@@ -1,0 +1,25 @@
+{% extends '_layouts/base.twig' %}
+
+{% block title %}
+	Projects - {{ siteName }}
+{% endblock %}
+
+{% block content %}
+	<div class="mx-auto max-w-6xl px-4 py-8">
+		<h1>Projects</h1>
+
+		{# 1. Query all projects #}
+		{% set projects = craft.entries().section('projects').orderBy('postDate DESC').all() %}
+
+		{# 2. Check if any exist #}
+		{% if projects|length %}
+			{% for project in projects %}
+				{{ project.render() }}
+			{% endfor %}
+		{% else %}
+			<p>
+				No projects yet.
+			</p>
+		{% endif %}
+	</div>
+{% endblock %}

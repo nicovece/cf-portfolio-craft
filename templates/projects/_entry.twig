@@ -1,0 +1,62 @@
+{% extends '_layouts/base.twig' %}
+
+{% block title %}
+	{{ entry.title }} - {{ siteName }}
+{% endblock %}
+
+{% block content %}
+	<article class="mx-auto max-w-7xl px-4 py-8">
+		{# Hero Image #}
+		{% set heroImage = entry.heroImage.one() %}
+		{% if heroImage %}
+			<img src="{{ heroImage.url }}" alt="{{ heroImage.title }}" class="mb-8 h-auto w-full" />
+		{% endif %}
+
+		{# Title #}
+		<h1>{{ entry.title }}</h1>
+
+		{# Meta: Date + Links #}
+		<div class="my-4 flex gap-4">
+			{% if entry.publishDate %}
+				<span>{{ entry.publishDate|date('F Y') }}</span>
+			{% endif %}
+
+			{% if entry.projectUrl %}
+				<a href="{{ entry.projectUrl }}" target="_blank" rel="noopener">View Project →</a>
+			{% endif %}
+
+			{% if entry.githubUrl %}
+				<a href="{{ entry.githubUrl }}" target="_blank" rel="noopener">GitHub →</a>
+			{% endif %}
+		</div>
+
+		{# Tech Stack #}
+		{% if entry.techStack|length %}
+			<ul class="my-4 flex flex-wrap gap-2">
+				{% for tech in entry.techStack %}
+					<li class="bg-gray-100 px-2 py-1 text-sm">{{ tech.technology }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		{# Full Description (CKEditor field - outputs HTML) #}
+		{% if entry.description %}
+			<div class="prose">
+				{{ entry.description }}
+			</div>
+		{% endif %}
+
+		{# Gallery #}
+		{% set galleryImages = entry.gallery.all() %}
+		{% if galleryImages|length %}
+			<div class="mt-8 grid grid-cols-2 gap-4">
+				{% for image in galleryImages %}
+					<img src="{{ image.url }}" alt="{{ image.title }}" />
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		{# Back link #}
+		<a href="{{ url('projects') }}" class="mt-8 inline-block">← Back to Projects</a>
+	</article>
+{% endblock %}

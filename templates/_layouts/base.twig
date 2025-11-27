@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			{% block title %}
+				{{ siteName }}
+			{% endblock %}
+		</title>
+
+		{{ craft.vite.script('src/js/main.ts', false) }}
+	</head>
+	<body>
+		{% include '_modules/site-nav' %}
+		<main>
+			{% block content %}
+
+			{% endblock %}
+		</main>
+		<h1>Hello from the base layout!!!</h1>
+	</body>
+</html>

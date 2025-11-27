@@ -1,0 +1,22 @@
+<article>
+	{# 4. Display hero image if exists #}
+	{# Asset field (image) #}
+	{% set image = entry.heroImage.one() %}
+	{% if image %}
+		<img src="{{ image.url }}" alt="{{ image.title }}" />
+	{% endif %}
+
+	{# 5. Title as link to detail page #}
+	<h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+
+	{# 6. Short description #}
+
+	{# 7. Tech stack tags #}
+	{% if entry.techStack|length %}
+		<ul>
+			{% for tech in entry.techStack %}
+				<li>{{ tech.technology }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</article>
