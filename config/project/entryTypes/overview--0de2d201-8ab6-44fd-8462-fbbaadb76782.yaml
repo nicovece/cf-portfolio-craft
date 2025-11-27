@@ -1,0 +1,125 @@
+color: null
+description: null
+fieldLayouts:
+  91b943d1-d1b2-42f5-8342-1e56c0c55d80:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-28T17:47:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 02a69196-df6c-400e-8f4f-2c7d620a6bcb # Section Title
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c5d61340-4a9d-4bfd-9af0-94c2be09200e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-28T17:47:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3ec10970-9304-4c14-8c1b-18726aa141b9 # Intro Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9d3360dd-0df7-4185-924a-c7550409f704
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-28T17:47:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9cd3478c-7da1-42fb-9fd3-4a0422407e4c # Role
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1f6fb66f-64c5-491d-85e2-0714cfe69592
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-28T17:47:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d7a8dc1d-82f0-457c-bcbb-69a08a9d31e7 # Context
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dff71549-cce6-4c89-8307-ce28d5c5b3cc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-28T17:47:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 31655d94-fba9-489d-8b4a-755a1be0aeed # Tech Stack
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 48f27607-f3bc-468c-ae8e-b8a49943d0a3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-28T17:47:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 77bedc71-e756-4e7a-8811-39806cec98fc # Outro Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bd2e25a6-287c-489e-a495-593267a703e9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 3791c108-4dae-4788-b51f-e856c70b7e5d
+        userCondition: null
+handle: overview
+hasTitleField: false
+icon: null
+name: Overview
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: sectionTitle
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

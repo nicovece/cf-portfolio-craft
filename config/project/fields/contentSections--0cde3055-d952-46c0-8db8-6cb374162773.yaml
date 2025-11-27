@@ -1,0 +1,45 @@
+columnSuffix: null
+handle: contentSections
+instructions: 'Main content for this project - add sections in any order'
+name: 'Content Sections'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 7589e2aa-2284-4e7e-92fc-e281a137f1c7 # Text Section
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - d330fe93-be16-4abc-ad3f-451ccbbb69b5 # Image Section
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 0de2d201-8ab6-44fd-8462-fbbaadb76782 # Overview
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

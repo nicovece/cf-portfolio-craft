@@ -92,7 +92,7 @@ fieldLayouts:
             dateAdded: '2025-11-25T08:15:07+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: bbac927c-8f02-4c01-b787-5b93491ae2ed # Gallery
+            fieldUid: bbac927c-8f02-4c01-b787-5b93491ae2ed
             handle: null
             includeInCards: false
             instructions: null
@@ -106,10 +106,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-11-25T08:15:07+00:00'
+            dateAdded: '2025-11-28T17:55:12+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 31655d94-fba9-489d-8b4a-755a1be0aeed # Tech Stack
+            fieldUid: 0cde3055-d952-46c0-8db8-6cb374162773 # Content Sections
             handle: null
             includeInCards: false
             instructions: null
@@ -118,10 +118,16 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 81ee5074-9f1c-4591-b79a-a78faa05b216
+            uid: 65fbcb77-bc58-45e3-9395-ed975fba98b9
             userCondition: null
             warning: null
             width: 100
+        name: Content
+        uid: 68ee9007-f318-4f5b-9ca4-67d960f90131
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
             dateAdded: '2025-11-25T08:15:07+00:00'
             editCondition: null
@@ -173,8 +179,54 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: 68ee9007-f318-4f5b-9ca4-67d960f90131
+        name: Meta
+        uid: f64110ff-cb38-4741-b0cd-6d0f2ae38574
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-29T08:10:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ab648d29-9a8e-42ce-8ce1-ea2b834f869a # Tech Stack Items
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 547aab8f-3f4d-4c85-b34f-45e75376ee94
+            userCondition: null
+            warning: null
+            width: 100
+        name: Tech
+        uid: a7e7fdf5-4ec9-4a31-9175-7e9eaedd4217
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-29T10:55:20+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: cdba1535-dc8b-460e-b34a-2c489560a09d # Gallery
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fce51bce-fff7-49cb-8991-58036d25eb45
+            userCondition: null
+            warning: null
+            width: 100
+        name: Gallery
+        uid: 2e92d73e-7927-4668-9d59-342a750949f7
         userCondition: null
 handle: project
 hasTitleField: true

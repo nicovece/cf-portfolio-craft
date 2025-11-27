@@ -1,0 +1,91 @@
+color: null
+description: null
+fieldLayouts:
+  50ad56ab-7b17-4f12-914f-1eb46b942694:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-28T17:42:24+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 953298f3-93bd-427c-885b-63aafc94d31b # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 21584db7-d2e4-45bc-b0dc-7b3780dbd7a5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-28T17:42:24+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9ec92f92-94ea-422b-bc57-2b4260e56705 # Caption
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 428baab3-f061-4d4c-8b30-85f58f26bb6e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-28T17:42:24+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: a2d930ab-2201-4e51-89de-215501d8b37a # Alt Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: af9216ed-c103-4dd7-b852-41ea34ff2a9d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-29T10:49:09+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 85597cc0-9094-44d7-b720-fcdf26fb9f08 # CSS Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e10a2385-ee10-44e9-b53f-584584976995
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e244eda2-2bd6-4424-b91c-9964c55aea3e
+        userCondition: null
+handle: imageSection
+hasTitleField: false
+icon: null
+name: 'Image Section'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: 'Image: {altText}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
