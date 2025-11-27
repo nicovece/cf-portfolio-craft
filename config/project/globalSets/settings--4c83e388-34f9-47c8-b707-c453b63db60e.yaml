@@ -1,0 +1,30 @@
+fieldLayouts:
+  4d5f7c2b-1406-4a3e-a2fd-4fa4795c87bd:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-27T10:40:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4b88eb37-66fa-4ec1-bc90-0a62ee00369c # Social Links
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 692ff546-53d2-498a-995e-0341e27954dc
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Social Links Settings'
+        uid: 956c9b86-49b7-4a82-ad97-f42d8f923851
+        userCondition: null
+handle: settings
+name: Settings
+sortOrder: 1
