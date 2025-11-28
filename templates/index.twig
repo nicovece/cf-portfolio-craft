@@ -1,15 +1,59 @@
-{% extends "_layouts/base.twig" %}
+{% extends '_layouts/base.twig' %}
 
-{% block title %}Home -
-	{{ siteName }}
+{% block title %}
+	{{ entry.title }} - {{ siteName }}
 {% endblock %}
 
 {% block content %}
-	<h1 class="text-4xl font-bold text-red-500 bg-yellow-300 p-8">
-		Hello from Craft + Vite + Tailwind!
-		{{ entry.title }}
-	</h1>
-	<p class="mt-4 text-blue-600 text-2xl bg-green-200 p-4">
-		If you can see this styled, everything is working.
-	</p>
+	{# Intro Section #}
+	<section class="px-4 py-12 md:px-8 lg:px-12">
+		<h1 class="text-3xl leading-tight font-light md:text-4xl lg:text-5xl">{{ entry.introText }}</h1>
+	</section>
+
+	{# Projects Section #}
+	<section class="px-4 py-12 md:px-8 lg:px-12">
+		<h2 class="mb-8 text-2xl font-medium">Recent Projects</h2>
+
+		{% set projects = craft.entries().section('projects').limit(6).orderBy('postDate DESC').all() %}
+
+		{% if projects|length %}
+			<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+				{% for project in projects %}
+					{% include '_partials/entry/project-teaser' with {
+						entry: project
+					} %}
+				{% endfor %}
+			</div>
+		{% else %}
+			<p>
+				No projects yet.
+			</p>
+		{% endif %}
+	</section>
+
+	{# About Box Section #}
+	<section class="px-4 py-12 md:px-8 lg:px-12">
+		<div class="flex flex-col items-center gap-8 rounded-lg bg-gray-100 p-8 md:flex-row">
+			{% set aboutImage = entry.profileImage.one() %}
+			{% if aboutImage %}
+				<img src="{{ aboutImage.url }}" alt="{{ entry.calloutTitle }}" class="h-32 w-32 rounded-full object-cover" />
+			{% endif %}
+
+			<div class="flex-1">
+				<h3 class="mb-2 text-xl font-medium">{{ entry.calloutTitle }}</h3>
+				<div class="prose">
+					{{ entry.calloutText }}
+				</div>
+
+				<div class="mt-4 flex gap-4">
+					<a href="{{ url('about') }}" class="text-accent hover:underline">More about me</a>
+
+					{% set resume = entry.resumeFile.one() %}
+					{% if resume %}
+						<a href="{{ resume.url }}" class="text-accent hover:underline" download>Download Resume</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}

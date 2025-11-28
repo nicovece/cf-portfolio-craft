@@ -1,0 +1,22 @@
+<article>
+	<h3 class="text-lg font-medium">teaser</h3>
+	{% set image = entry.heroImage.one() %}
+	{% if image %}
+		<img src="{{ image.url }}" alt="{{ image.title }}" />
+	{% endif %}
+
+	{# 5. Title as link to detail page #}
+	<h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+
+	{# 6. Short description #}
+
+	{# 7. Tech stack tags - Essential Only #}
+	{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
+	{% if essentialTech|length %}
+		<ul>
+			{% for tech in essentialTech %}
+				<li>{{ tech.techItemName }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</article>
