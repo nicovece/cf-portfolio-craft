@@ -11,11 +11,12 @@
 
 	{# 6. Short description #}
 
-	{# 7. Tech stack tags #}
-	{% if entry.techStack|length %}
+	{# 7. Tech stack tags - Essential Only #}
+	{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
+	{% if essentialTech|length %}
 		<ul>
-			{% for tech in entry.techStack %}
-				<li>{{ tech.technology }}</li>
+			{% for tech in essentialTech %}
+				<li>{{ tech.techItemName }}</li>
 			{% endfor %}
 		</ul>
 	{% endif %}

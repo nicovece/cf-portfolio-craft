@@ -30,20 +30,94 @@
 			{% endif %}
 		</div>
 
-		{# Tech Stack #}
-		{% if entry.techStack|length %}
+		{# Tech Stack - Essential Only #}
+		{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
+		{% if essentialTech|length %}
 			<ul class="my-4 flex flex-wrap gap-2">
-				{% for tech in entry.techStack %}
-					<li class="bg-gray-100 px-2 py-1 text-sm">{{ tech.technology }}</li>
+				{% for tech in essentialTech %}
+					<li class="bg-gray-100 px-2 py-1 text-sm">{{ tech.techItemName }}</li>
 				{% endfor %}
 			</ul>
 		{% endif %}
 
-		{# Full Description (CKEditor field - outputs HTML) #}
-		{% if entry.description %}
-			<div class="prose">
-				{{ entry.description }}
-			</div>
+		{% set contentSections = entry.contentSections.all() %}
+
+		{% if contentSections|length %}
+			{% for section in contentSections %}
+				{# Check what TYPE of block this is #}
+				{% switch section.type %}
+
+				{# OVERVIEW BLOCK #}
+				{% case 'overview' %}
+				<section class="my-8">
+					<h2>{{ section.sectionTitle }}</h2>
+
+					<ul class="list-unstyled my-4">
+						{% if section.role %}
+							<li><strong>Role:</strong> {{ section.role }}</li>
+						{% endif %}
+						{% if section.context %}
+							<li><strong>Context:</strong> {{ section.context }}</li>
+						{% endif %}
+					</ul>
+
+					{% set essentialTech =
+						entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential')
+					%}
+					{% if essentialTech|length %}
+						<ul class="my-4 flex flex-wrap gap-2">
+							{% for tech in essentialTech %}
+								<li class="bg-gray-100 px-2 py-1 text-sm">{{ tech.techItemName }}</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+
+					{% if section.introText %}
+						<div class="prose">
+							{{ section.introText }}
+						</div>
+					{% endif %}
+				</section>
+
+				{# TEXT SECTION BLOCK #}
+				{% case 'textSection' %}
+				<section class="my-8">
+					<h2>{{ section.sectionTitle }}</h2>
+					<div class="prose">
+						{{ section.introText }}
+					</div>
+					{% if section.isCollapsible %}
+						<details class="project__details">
+							<summary>
+								{% if section.summaryText %}
+									{{ section.summaryText }}
+								{% else %}
+									Read more about {{ section.sectionTitle }}
+								{% endif %}
+							</summary>
+							<div class="prose">
+								{{ section.content }}
+							</div>
+						</details>
+					{% endif %}
+				</section>
+
+				{# IMAGE SECTION BLOCK #}
+				{% case 'imageSection' %}
+				{% set image = section.image.one() %}
+				{% if image %}
+					<figure class="my-8">
+						<img src="{{ image.url }}" alt="{{ section.altText }}" class="h-auto w-full" />
+						{% if section.caption %}
+							<figcaption class="mt-2 text-sm text-gray-600">
+								{{ section.caption }}
+							</figcaption>
+						{% endif %}
+					</figure>
+				{% endif %}
+
+				{% endswitch %}
+			{% endfor %}
 		{% endif %}
 
 		{# Gallery #}
