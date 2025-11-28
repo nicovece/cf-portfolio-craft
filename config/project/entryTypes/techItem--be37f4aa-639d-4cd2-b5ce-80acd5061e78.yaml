@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  95679384-6c45-457c-b83f-e176d79eaf6e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-29T08:09:23+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 8c98ef47-d18e-4c2b-8b6a-ae2c053463e0 # Tech Item Name
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 80a39c06-3583-46e7-a017-0a789f0aadc8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-29T08:09:23+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ece825c7-5d9b-4ecc-818e-878171b7526c # Tech Item Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 546d58be-37b9-4e0e-a6ec-13dbce5a642a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-29T08:09:23+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: cfd6dc66-37b4-4d63-9fe9-a7ff90dc5847 # Tech Item Category
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ef7c4b16-d2d9-4fae-82ba-66192914a2c9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: bca28692-d70c-4a27-80e5-e49b93c28ebf
+        userCondition: null
+handle: techItem
+hasTitleField: false
+icon: null
+name: 'Tech Item'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{techItemName}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
