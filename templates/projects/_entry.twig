@@ -121,13 +121,75 @@
 		{% endif %}
 
 		{# Gallery #}
-		{% set galleryImages = entry.gallery.all() %}
-		{% if galleryImages|length %}
-			<div class="mt-8 grid grid-cols-2 gap-4">
-				{% for image in galleryImages %}
-					<img src="{{ image.url }}" alt="{{ image.title }}" />
+		{% set galleryItems = entry.gallery.all() %}
+		{% if galleryItems|length %}
+			<section class="mt-8 grid grid-cols-2 gap-4">
+				{% for item in galleryItems %}
+					{% set image = item.image.one() %}
+					{% if image %}
+						<figure>
+							{% if item.hasModal %}
+								{# Clickable image that opens modal #}
+								{% set modalImg = item.modalImage.one() ?: image %}
+								{% set modalCap = item.modalCaption ?: item.caption %}
+								<button
+									type="button"
+									class="gallery__trigger cursor-pointer border-0 bg-transparent p-0"
+									data-modal-image="{{ modalImg.url }}"
+									data-modal-alt="{{ item.altText }}"
+									{% if modalCap %}data-modal-caption="{{ modalCap }}"{% endif %}
+									aria-label="Open larger view of {{ item.altText }}"
+								>
+									<img
+										src="{{ image.url }}"
+										alt="{{ item.altText }}"
+										{% if item.cssClasses %}class="{{ item.cssClasses }}"{% endif %}
+									/>
+								</button>
+							{% else %}
+								{# Regular non-clickable image #}
+								<img
+									src="{{ image.url }}"
+									alt="{{ item.altText }}"
+									{% if item.cssClasses %}class="{{ item.cssClasses }}"{% endif %}
+								/>
+							{% endif %}
+							{% if item.caption %}
+								<figcaption class="mt-2 text-sm text-gray-600">{{ item.caption }}</figcaption>
+							{% endif %}
+						</figure>
+					{% endif %}
 				{% endfor %}
-			</div>
+			</section>
+
+			{# Modal markup - only if at least one item has modal enabled #}
+			{% if galleryItems|filter(item => item.hasModal)|length %}
+				<dialog id="gallery-modal" class="gallery__modal fixed inset-0 z-50 m-0 h-full w-full border-0 bg-black/90 p-0">
+					<div class="flex h-full w-full items-center justify-center p-4">
+						<div class="relative max-h-full max-w-7xl">
+							{# Close button #}
+							<button
+								type="button"
+								class="gallery__close absolute right-4 top-4 z-10 rounded bg-white/10 px-4 py-2 text-white hover:bg-white/20"
+								aria-label="Close modal"
+							>
+								✕ Close
+							</button>
+
+							{# Image container #}
+							<img
+								id="gallery-modal-image"
+								src=""
+								alt=""
+								class="max-h-[90vh] w-auto"
+							/>
+
+							{# Caption (if exists) #}
+							<p id="gallery-modal-caption" class="mt-4 text-center text-white"></p>
+						</div>
+					</div>
+				</dialog>
+			{% endif %}
 		{% endif %}
 
 		{# Back link #}

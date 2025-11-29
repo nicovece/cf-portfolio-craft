@@ -1,0 +1,148 @@
+color: null
+description: null
+fieldLayouts:
+  984b69c4-d472-4d70-91e5-68a029e0b5da:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-29T10:52:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 953298f3-93bd-427c-885b-63aafc94d31b # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 012e2ea2-c210-4940-b0e0-87507127b63a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-29T10:52:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: a2d930ab-2201-4e51-89de-215501d8b37a # Alt Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5de36e65-088b-4e57-8af5-6d737ec31748
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-29T10:52:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9ec92f92-94ea-422b-bc57-2b4260e56705 # Caption
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a700274-1bc4-46d4-b2f4-1383fed53dfb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-29T10:52:06+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 85597cc0-9094-44d7-b720-fcdf26fb9f08 # CSS Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bbf3fc03-def4-49ca-bc54-2aa2fb8c1f44
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 78332aa4-0cd3-4b00-8008-5a7a16d6841e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-29T11:57:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 2b6a6b0a-fe83-46c1-b19a-31abacb9ff87 # Has Modal
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fedb8e51-c15e-47e3-bc02-47ffbdfbd4c6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-29T11:57:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5edaa549-5b99-4c40-b79d-7689afdd7924 # Modal Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b96edc7c-251a-49fa-9bbe-0812877dd1a6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-29T11:57:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 261bf834-e0d1-4544-8005-56f88bbdb6c7 # Modal Caption
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 138aab1d-3685-4f0f-aeaf-8c9a35e8f75a
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Modal Content'
+        uid: 1148dcb9-ad0d-4383-b3fc-196698d468d9
+        userCondition: null
+handle: galleryItem
+hasTitleField: false
+icon: null
+name: 'Gallery Item'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{altText}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

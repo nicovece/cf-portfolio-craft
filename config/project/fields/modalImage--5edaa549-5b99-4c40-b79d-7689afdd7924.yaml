@@ -1,31 +1,30 @@
 columnSuffix: null
-handle: gallery
-instructions: null
-name: Gallery
+handle: modalImage
+instructions: 'Optional: Use a different (larger) image for the modal. If empty, uses the main gallery image'
+name: 'Modal Image'
 searchable: false
 settings:
   allowSelfRelations: false
   allowSubfolders: false
   allowUploads: true
-  allowedKinds:
-    - image
+  allowedKinds: null
   branchLimit: null
   defaultPlacement: end
   defaultUploadLocationSource: 'volume:912bb21d-11b7-4bee-a3ba-ad1551b083d3' # Images
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
-  maxRelations: null
+  maxRelations: 1
   minRelations: null
   previewMode: full
-  restrictFiles: true
+  restrictFiles: false
   restrictLocation: true
   restrictedDefaultUploadSubpath: null
   restrictedLocationSource: 'volume:912bb21d-11b7-4bee-a3ba-ad1551b083d3' # Images
   restrictedLocationSubpath: null
-  selectionLabel: 'Add images'
+  selectionLabel: null
   showCardsInGrid: false
   showSearchInput: true
-  showSiteMenu: true
+  showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   sources: '*'

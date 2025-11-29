@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: tldrText
+instructions: null
+name: 'TL;DR Text'
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: '*'
+  characterLimit: null
+  ckeConfig: 0dd9c835-6b34-41d3-80be-1d3d7abbf3c4 # Default
+  createButtonLabel: null
+  defaultTransform: null
+  expandEntryButtons: false
+  fullGraphqlData: true
+  parseEmbeds: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+  sourceEditingGroups:
+    - __ADMINS__
+  wordLimit: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

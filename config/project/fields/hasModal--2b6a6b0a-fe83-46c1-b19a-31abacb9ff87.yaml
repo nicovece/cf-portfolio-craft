@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: hasModal
+instructions: 'Enable modal for this gallery item'
+name: 'Has Modal'
+searchable: false
+settings:
+  default: false
+  offLabel: "Item doesn't have modal"
+  onLabel: 'Item has modal'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

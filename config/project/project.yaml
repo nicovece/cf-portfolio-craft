@@ -1,4 +1,4 @@
-dateModified: 1764414370
+dateModified: 1764417468
 email:
   fromEmail: me@nicovece.com
   fromName: "Nico's portfolio"
@@ -21,6 +21,7 @@ meta:
     1dd5fa5c-3c5c-4a62-9374-c106e5cd34c0: About # About
     1f164e26-66e9-4f24-a3c8-22f85e2cd36c: 'Profile Image' # Profile Image
     02a69196-df6c-400e-8f4f-2c7d620a6bcb: 'Section Title' # Section Title
+    2b6a6b0a-fe83-46c1-b19a-31abacb9ff87: 'Has Modal' # Has Modal
     2b95f2fc-a79a-4f0d-a8d7-95a871da11dc: Body # Body
     3d64e561-8a19-44d2-93bc-c83b592eeb06: Contact # Contact
     3ec10970-9304-4c14-8c1b-18726aa141b9: 'Intro Text' # Intro Text
@@ -29,12 +30,14 @@ meta:
     4c83e388-34f9-47c8-b707-c453b63db60e: Settings # Settings
     5a2e10e5-d101-4b1e-8f49-e396385ff908: 'Project URL' # Project URL
     05d7ebc9-41b0-46e0-a54f-179adea38497: 'GitHub URL' # GitHub URL
+    5edaa549-5b99-4c40-b79d-7689afdd7924: 'Modal Image' # Modal Image
     8c98ef47-d18e-4c2b-8b6a-ae2c053463e0: 'Tech Item Name' # Tech Item Name
     9cd3478c-7da1-42fb-9fd3-4a0422407e4c: Role # Role
     9ec92f92-94ea-422b-bc57-2b4260e56705: Caption # Caption
     48f457ea-f542-4b48-8ec2-448ace5af166: "Nico's portfolio" # Nico's portfolio
     54ec80f0-65f7-4d05-a156-a18331c71227: 'Publish Date' # Publish Date
     77bedc71-e756-4e7a-8811-39806cec98fc: 'Outro Text' # Outro Text
+    261bf834-e0d1-4544-8005-56f88bbdb6c7: 'Modal Caption' # Modal Caption
     522e8e10-5cd3-4e4f-905e-6fbb9b08136c: "Nico's portfolio" # Nico's portfolio
     644ba065-ac47-45c6-9cc0-71261861bf23: 'TL;DR Text' # TL;DR Text
     912bb21d-11b7-4bee-a3ba-ad1551b083d3: Images # Images

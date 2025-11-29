@@ -175,3 +175,31 @@
       font-family: var(--font-family-primary);
     }
   }
+
+  @layer components {
+    /* Gallery Modal */
+    .gallery__trigger {
+      transition: opacity 0.2s ease;
+    }
+
+    .gallery__trigger:hover {
+      opacity: 0.8;
+    }
+
+    .gallery__modal::backdrop {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .gallery__modal[open] {
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
