@@ -3,14 +3,22 @@
  * Handles opening/closing modal for gallery images
  */
 
+let isInitialized = false;
+
 export function initGalleryModal(): void {
 	const modal = document.getElementById('gallery-modal') as HTMLDialogElement | null;
 	if (!modal) return;
 
+	// Prevent duplicate initialization
+	if (isInitialized) {
+		return;
+	}
+	isInitialized = true;
+
 	const modalImage = document.getElementById('gallery-modal-image') as HTMLImageElement | null;
 	const modalCaption = document.getElementById('gallery-modal-caption') as HTMLParagraphElement | null;
 	const triggers = document.querySelectorAll('.gallery__trigger');
-	const closeButton = modal.querySelector('.gallery__close');
+	const closeButton = modal.querySelector('.gallery__modal__close');
 
 	if (!modalImage || !modalCaption) return;
 
@@ -26,20 +34,43 @@ export function initGalleryModal(): void {
 				modalImage.src = imageUrl;
 				modalImage.alt = altText;
 
-				// Set caption if provided
-				if (caption) {
-					modalCaption.textContent = caption;
+				// Handle image loading errors
+				const handleImageError = () => {
+					modalCaption.textContent = `Failed to load image: ${altText || 'Unknown'}`;
 					modalCaption.classList.remove('hidden');
-				} else {
-					modalCaption.textContent = '';
-					modalCaption.classList.add('hidden');
-				}
+					console.error('Failed to load gallery image:', imageUrl);
+				};
+
+				// Handle successful image load
+				const handleImageLoad = () => {
+					// Set caption if provided
+					if (caption) {
+						modalCaption.textContent = caption;
+						modalCaption.classList.remove('hidden');
+					} else {
+						modalCaption.textContent = '';
+						modalCaption.classList.add('hidden');
+					}
+				};
+
+				// Remove previous listeners to avoid duplicates
+				modalImage.removeEventListener('error', handleImageError);
+				modalImage.removeEventListener('load', handleImageLoad);
+
+				// Add new listeners
+				modalImage.addEventListener('error', handleImageError);
+				modalImage.addEventListener('load', handleImageLoad);
 
 				// Open modal
 				modal.showModal();
 
-				// Trap focus within modal
-				modalImage.focus();
+				// Focus the close button for better accessibility
+				// If close button doesn't exist or isn't focusable, focus the modal itself
+				if (closeButton instanceof HTMLElement) {
+					closeButton.focus();
+				} else {
+					modal.focus();
+				}
 			}
 		});
 	});
@@ -51,23 +82,15 @@ export function initGalleryModal(): void {
 
 	// Close modal when clicking on backdrop (outside content)
 	modal.addEventListener('click', (e) => {
-		const rect = modal.getBoundingClientRect();
-		const isInDialog =
-			rect.top <= e.clientY &&
-			e.clientY <= rect.top + rect.height &&
-			rect.left <= e.clientX &&
-			e.clientX <= rect.left + rect.width;
-
-		if (!isInDialog) {
+		if (e.target === modal) {
 			modal.close();
 		}
 	});
 
 	// Close modal on ESC key (native <dialog> behavior handles this automatically)
-	// But we can add additional cleanup if needed
+	// Cleanup on close to prevent flash of old content
 	modal.addEventListener('close', () => {
-		// Optional: Clear image to prevent flash of old content
-		// modalImage.src = '';
-		// modalCaption.textContent = '';
+		modalImage.src = '';
+		modalCaption.textContent = '';
 	});
 }
