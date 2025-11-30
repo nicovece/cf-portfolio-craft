@@ -1,0 +1,97 @@
+{{
+	text
+		|retcon(
+			[
+				['removeEmpty', 'body > p, body > h2, body > h3, body > h4'],
+				[
+					'attr',
+					'body > h2',
+					{
+						class: 'text-3xl font-bold mt-8 mb-4 first:mt-0'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > h3',
+					{
+						class: 'text-2xl font-semibold mt-6 mb-3'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > h4',
+					{
+						class: 'text-xl font-semibold mt-5 mb-2'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > p',
+					{
+						class: 'mb-4 leading-relaxed last:mb-0'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > ul',
+					{
+						class: 'list-disc pl-6 mb-4 space-y-1'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > ul > li',
+					{
+						class: 'pl-1'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > ol',
+					{
+						class: 'list-decimal pl-6 mb-4 space-y-1'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > ol > li',
+					{
+						class: 'pl-1'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > * > a',
+					{
+						class: 'text-blue-600 underline hover:text-blue-800 transition-colors'
+					},
+					false
+				],
+				[
+					'attr',
+					'strong',
+					{
+						class: 'font-semibold'
+					},
+					false
+				],
+				[
+					'attr',
+					'em',
+					{
+						class: 'italic'
+					},
+					false
+				]
+			]
+		)
+		|raw
+}}

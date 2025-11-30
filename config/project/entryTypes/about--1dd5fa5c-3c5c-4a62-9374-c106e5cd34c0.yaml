@@ -37,8 +37,82 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
+          -
+            dateAdded: '2025-11-30T17:03:18+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3ec10970-9304-4c14-8c1b-18726aa141b9 # Intro Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ad1b86b-aede-40b1-b955-e8d505c01457
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-30T17:03:18+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 644ba065-ac47-45c6-9cc0-71261861bf23 # TL;DR Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aa37ce2e-e97e-4f66-9c1e-3ee90be3d444
+            userCondition: null
+            warning: null
+            width: 100
+        name: Intro
         uid: 529aef4a-4d94-42c7-9e7d-6cf1b3986216
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-30T17:03:18+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 1f164e26-66e9-4f24-a3c8-22f85e2cd36c # Profile Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5ca435d4-d08d-4f5c-80ef-b20cdc98cea1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-30T17:03:18+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 2b95f2fc-a79a-4f0d-a8d7-95a871da11dc # Body
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8418c3d4-00ac-4bec-b981-7143061aea4f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Body
+        uid: af0ffb30-490f-40e3-a18e-3e4afd6e0611
         userCondition: null
 handle: about
 hasTitleField: true

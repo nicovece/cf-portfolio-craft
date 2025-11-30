@@ -1,4 +1,4 @@
-dateModified: 1764447436
+dateModified: 1764522198
 email:
   fromEmail: me@nicovece.com
   fromName: "Nico's portfolio"
@@ -77,6 +77,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   vite:
     edition: standard
     enabled: true

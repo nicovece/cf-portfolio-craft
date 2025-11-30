@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "619f0ce049b5ccd606e0583e3ead718d",
+    "content-hash": "7bec3c6637112318be7831fa4abfea03",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2546,6 +2546,71 @@
                 "source": "https://github.com/lanthaler/JsonLD/tree/1.2.1"
             },
             "time": "2022-09-29T08:45:17+00:00"
+        },
+        {
+            "name": "mmikkel/retcon",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mmikkel/Retcon-Craft.git",
+                "reference": "80a520b54220417a598f66b5dcac77216da51cc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/Retcon-Craft/zipball/80a520b54220417a598f66b5dcac77216da51cc1",
+                "reference": "80a520b54220417a598f66b5dcac77216da51cc1",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0-beta.1",
+                "masterminds/html5": "^2.6",
+                "php": "^8.2",
+                "symfony/css-selector": "^6.0|^7.0",
+                "symfony/dom-crawler": "^6.0|^7.0"
+            },
+            "require-dev": {
+                "craftcms/rector": "dev-main"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Retcon",
+                "class": "mmikkel\\retcon\\Retcon",
+                "handle": "retcon",
+                "components": [],
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/Retcon-Craft/master/CHANGELOG.md",
+                "hasCpSection": false,
+                "hasCpSettings": false,
+                "schemaVersion": "1.0.0"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\retcon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "https://vaersaagod.no"
+                }
+            ],
+            "description": "Powerful Twig filters for mutating and querying HTML",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "retcon"
+            ],
+            "support": {
+                "docs": "https://github.com/mmikkel/Retcon-Craft/blob/master/README.md",
+                "issues": "https://github.com/mmikkel/Retcon-Craft/issues",
+                "source": "https://github.com/mmikkel/Retcon-Craft/tree/3.2.1"
+            },
+            "time": "2024-10-21T13:36:18+00:00"
         },
         {
             "name": "moneyphp/money",
