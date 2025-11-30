@@ -1,9 +1,17 @@
+{% import '_macros' as macros %}
 <article>
 	{# 4. Display hero image if exists #}
 	{# Asset field (image) #}
 	{% set image = entry.heroImage.one() %}
 	{% if image %}
-		<img src="{{ image.url }}" alt="{{ image.title }}" />
+		<img
+			src="{{ image.getUrl('w1200') }}"
+			srcset="{{ macros.srcSet(image) }}"
+			sizes="(min-width: 1024px) 50vw, 100vw"
+			alt="{{ image.title }}"
+			class="h-auto w-full"
+			loading="lazy"
+		/>
 	{% endif %}
 
 	{# 5. Title as link to detail page #}

@@ -1,4 +1,5 @@
 {% extends '_layouts/base.twig' %}
+{% import '_macros' as macros %}
 
 {% block title %}
 	{{ entry.title }} - {{ siteName }}
@@ -9,7 +10,13 @@
 		{# Hero Image #}
 		{% set heroImage = entry.heroImage.one() %}
 		{% if heroImage %}
-			<img src="{{ heroImage.url }}" alt="{{ heroImage.title }}" class="mb-8 h-auto w-full" />
+			<img
+				src="{{ heroImage.getUrl('w1200') }}"
+				srcset="{{ macros.srcSet(heroImage) }}"
+				sizes="100vw"
+				alt="{{ heroImage.title }}"
+				class="mb-8 h-auto w-full"
+			/>
 		{% endif %}
 
 		{# Title #}
@@ -107,7 +114,14 @@
 				{% set image = section.image.one() %}
 				{% if image %}
 					<figure class="my-8">
-						<img src="{{ image.url }}" alt="{{ section.altText }}" class="h-auto w-full" />
+						<img
+							src="{{ image.getUrl('w1200') }}"
+							srcset="{{ macros.srcSet(image) }}"
+							sizes="(min-width: 700px) 50vw, 100vw"
+							alt="{{ section.altText }}"
+							class="h-auto w-full"
+							loading="lazy"
+						/>
 						{% if section.caption %}
 							<figcaption class="mt-2 text-sm text-gray-600">
 								{{ section.caption }}
@@ -130,32 +144,40 @@
 						<figure>
 							{% if item.hasModal %}
 								{# Clickable image that opens modal #}
-								{% set modalImg = item.modalImage.one() ?: image %}
-								{% set modalCap = item.modalCaption ?: item.caption %}
+								{% set modalImg = item.modalImage.one() ? : image %}
+								{% set modalCap = item.modalCaption ? : item.caption %}
 								<button
 									type="button"
 									class="gallery__trigger cursor-pointer border-0 bg-transparent p-0"
-									data-modal-image="{{ modalImg.url }}"
+									data-modal-image="{{ modalImg.getUrl('w2400') }}"
 									data-modal-alt="{{ item.altText }}"
-									{% if modalCap %}data-modal-caption="{{ modalCap }}"{% endif %}
+									{{ modalCap ? 'data-modal-caption="' ~ modalCap ~ '"' : '' }}
 									aria-label="Open larger view of {{ item.altText }}"
 								>
 									<img
-										src="{{ image.url }}"
+										src="{{ image.getUrl('w1200') }}"
+										srcset="{{ macros.srcSet(image) }}"
+										sizes="(min-width: 700px) 50vw, 100vw"
 										alt="{{ item.altText }}"
-										{% if item.cssClasses %}class="{{ item.cssClasses }}"{% endif %}
+										loading="lazy"
+										{{ item.cssClasses ? 'class="' ~ item.cssClasses ~ '"' : '' }}
 									/>
 								</button>
 							{% else %}
 								{# Regular non-clickable image #}
 								<img
-									src="{{ image.url }}"
+									src="{{ image.getUrl('w1200') }}"
+									srcset="{{ macros.srcSet(image) }}"
+									sizes="(min-width: 700px) 50vw, 100vw"
 									alt="{{ item.altText }}"
-									{% if item.cssClasses %}class="{{ item.cssClasses }}"{% endif %}
+									loading="lazy"
+									{{ item.cssClasses ? 'class="' ~ item.cssClasses ~ '"' : '' }}
 								/>
 							{% endif %}
 							{% if item.caption %}
-								<figcaption class="mt-2 text-sm text-gray-600">{{ item.caption }}</figcaption>
+								<figcaption class="mt-2 text-sm text-gray-600">
+									{{ item.caption }}
+								</figcaption>
 							{% endif %}
 						</figure>
 					{% endif %}
@@ -170,7 +192,7 @@
 							{# Close button #}
 							<button
 								type="button"
-								class="gallery__modal__close absolute right-4 top-4 z-10 rounded bg-white/10 px-4 py-2 text-white hover:bg-white/20"
+								class="gallery__modal__close absolute top-4 right-4 z-10 rounded bg-white/10 px-4 py-2 text-white hover:bg-white/20"
 								aria-label="Close modal"
 							>
 								✕ Close
@@ -180,8 +202,11 @@
 							<img
 								id="gallery-modal-image"
 								src=""
+								srcset=""
+								sizes="60vw"
 								alt=""
-								class="max-h-[90vh] w-auto"
+								class="max-h-[60vh] w-auto"
+								loading="eager"
 							/>
 
 							{# Caption (if exists) #}

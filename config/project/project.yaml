@@ -1,4 +1,4 @@
-dateModified: 1764417468
+dateModified: 1764447436
 email:
   fromEmail: me@nicovece.com
   fromName: "Nico's portfolio"
@@ -27,6 +27,7 @@ meta:
     3ec10970-9304-4c14-8c1b-18726aa141b9: 'Intro Text' # Intro Text
     4b88eb37-66fa-4ec1-bc90-0a62ee00369c: 'Social Links' # Social Links
     4b405d36-d472-4146-811f-455fc1bbe9b3: 'Resume file' # Resume file
+    4c4f49ff-75d7-4c45-8a5b-464e45dd4a46: w1600 # w1600
     4c83e388-34f9-47c8-b707-c453b63db60e: Settings # Settings
     5a2e10e5-d101-4b1e-8f49-e396385ff908: 'Project URL' # Project URL
     05d7ebc9-41b0-46e0-a54f-179adea38497: 'GitHub URL' # GitHub URL
@@ -43,11 +44,13 @@ meta:
     912bb21d-11b7-4bee-a3ba-ad1551b083d3: Images # Images
     4427e323-d8bf-49df-b4bf-200f75e4fd4c: Simple # Simple
     7589e2aa-2284-4e7e-92fc-e281a137f1c7: 'Text Section' # Text Section
+    8978d6bb-6ded-4fd6-9233-ba23d526f6cd: w1200 # w1200
     31655d94-fba9-489d-8b4a-755a1be0aeed: 'Tech Stack' # Tech Stack
     85597cc0-9094-44d7-b720-fcdf26fb9f08: 'CSS Classes' # CSS Classes
     331539bf-f337-402c-b9cc-24ad01f1d9de: 'Short Description' # Short Description
     953298f3-93bd-427c-885b-63aafc94d31b: Image # Image
     77330588-beed-421e-8760-caee384f18bc: 'Callout Title' # Callout Title
+    a0c1099e-8cc0-4505-857f-2d68234fe627: w400 # w400
     a2d930ab-2201-4e51-89de-215501d8b37a: 'Alt Text' # Alt Text
     a6ab6aee-25d2-4b00-a238-40d373adb443: About # About
     a677eac8-4b8d-45c6-9eaa-fb2a6d55fc90: 'Summary Text' # Summary Text
@@ -65,8 +68,10 @@ meta:
     d330fe93-be16-4abc-ad3f-451ccbbb69b5: 'Image Section' # Image Section
     dc423ad9-f1dd-4b89-8f72-b8dd4ed977d2: Content # Content
     e00ea223-31b3-4b51-94d3-da88a01f7773: 'Callout Text' # Callout Text
+    e1c9343f-5db5-44ac-ae9c-9d9acd900860: w2400 # w2400
     ece825c7-5d9b-4ecc-818e-878171b7526c: 'Tech Item Description' # Tech Item Description
     ee2824c3-8d7f-418a-b418-244c0e84e62f: Description # Description
+    fe0bacc5-42d2-4dc0-89dd-bd10bfe0a7e8: w800 # w800
 plugins:
   ckeditor:
     edition: standard

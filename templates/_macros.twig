@@ -22,3 +22,13 @@
 		{{ label }}
 	</a>
 {% endmacro %}
+
+{# Generate srcset attribute for responsive images #}
+  {% macro srcSet(image) %}
+    {{
+      [400, 800, 1200, 1600, 2400]|reduce(
+        (carry, v) => "#{carry}, #{image.getUrl("w" ~ v)} #{v}w",
+        ""
+      )
+    }}
+  {% endmacro %}
