@@ -25,6 +25,6 @@ fieldLayouts:
         name: 'Social Links Settings'
         uid: 956c9b86-49b7-4a82-ad97-f42d8f923851
         userCondition: null
-handle: settings
-name: Settings
+handle: socialLinksSettings
+name: 'Social Links Settings'
 sortOrder: 1
