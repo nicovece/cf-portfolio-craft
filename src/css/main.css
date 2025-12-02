@@ -154,7 +154,14 @@
     /* Font Family */
     --font-sans: "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     
-    /* Font Weights (Tailwind already has these by default, but you can customize) */
+    /* Custom Font Sizes - stored as CSS variables, utilities defined in @layer utilities */
+    --font-size-fs-smaller: 1rem;
+    --font-size-fs-small: 1.125rem;
+    --font-size-fs-base: 1.125rem;
+    --font-size-fs-large: clamp(1.2rem, 0.033vw + 1.094rem, 1.6rem);
+    --font-size-fs-xlarge: clamp(2rem, 1.15rem + 1.5vw, 3.2rem);
+    
+
     --font-weight-thin: 100;
     --font-weight-extralight: 200;
     --font-weight-light: 300;
@@ -165,18 +172,151 @@
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
     
-    --color-accent: #ff0000;
+    --color-accent: #ea514e;
     --color-accent-dark: #e32c26;
+    --color-dark: rgb(41, 43, 46);
+    --color-darker: rgb(13, 17, 23);
+    
+
+    /* Custom breakpoint */
+    --breakpoint-3xl: 105rem;
+    
+    /* Container max-width for large screens */
+    --max-width-container: 96rem;
+  }
+  
+
+
+  @media (min-width: 1680px) {
+    :root {
+      --font-size-fs-base: 1.5rem;
+    }
+  }
+
+  @layer utilities {
+    /* Custom font size utility classes */
+    .text-fs-smaller {
+      font-size: var(--font-size-fs-smaller);
+    }
+    .text-fs-small {
+      font-size: var(--font-size-fs-small);
+    }
+    .text-fs-base {
+      font-size: var(--font-size-fs-base);
+    }
+    .text-fs-large {
+      font-size: var(--font-size-fs-large);
+    }
+    .text-fs-xlarge {
+      font-size: var(--font-size-fs-xlarge);
+    }
   }
 
   @layer base {
     body {
       @apply min-h-screen bg-white text-black antialiased;
-      font-family: var(--font-family-primary);
+      font-family: var(--font-sans);
+    }
+    *:focus-visible {
+      @apply ring-2 ring-accent ring-offset-2 outline-none;
     }
   }
 
   @layer components {
+    /* Section Wrappers*/
+
+    /* Intro section - padding and margins */
+    .section-max-width {
+      @apply mx-auto pt-24 pb-6;
+      @apply md:pt-20;
+      @apply 2xl:pt-48;
+    }
+
+    /* Centered section width - reusable constrained width layout */
+    .section-max-width {
+      width: min(80%, 1280px);
+    }
+    @media (min-width: 768px) {
+      .section-max-width {
+        width: min(76%, 1280px);
+      }
+    }
+    @media (min-width: 1024px) {
+      .section-max-width {
+        width: min(80%, 1280px);
+      }
+    }
+    @media (min-width: 1280px) {
+      .section-max-width {
+        width: min(84%, 1280px);
+      }
+    }
+    /* Custom 3xl breakpoint handling */
+    @media (min-width: 105rem) {
+      .section-max-width {
+        width: min(80%, 1600px);
+      }
+    }
+
+    /* Full-width section layout - no width constraints */
+    .section-full {
+      width: 100%;
+    }
+
+    /* General section wrapper - standard padding */
+    .section-wrapper {
+      @apply px-4 py-12;
+      @apply md:px-8;
+      @apply lg:px-12;
+    }
+
+    /* Max-width container for content */
+    .section-container {
+      @apply mx-auto max-w-7xl;
+    }
+
+    /* Typography - Intro Section */
+
+    /* Large tagline text */
+    .tagline {
+      font-size: var(--font-size-fs-xlarge);
+      @apply mb-16;
+    }
+
+    /* Base text styling for intro section */
+    .intro-text {
+      font-size: var(--font-size-fs-base);
+      @apply leading-7 mb-6;
+      @apply lg:mb-0 lg:leading-8;
+    }
+
+    .intro-text:first-child {
+      @apply mb-24;
+    }
+
+    /* Custom 3xl breakpoint for intro text */
+    @media (min-width: 105rem) {
+      .intro-text {
+        line-height: 3rem;
+      }
+    }
+
+    /* Links */
+    .link-inline {
+      @apply block w-fit border-b border-current/25 font-medium;
+      @apply transition duration-200;
+      @apply hover:text-accent hover:border-current/75;
+      @apply my-2 md:my-0 md:mr-4 md:inline;
+    }
+    .page-about .intro-text .link-inline {
+      @apply inline;
+    }
+
+    /* Line Break */
+    .line-break {
+      @apply md:mr-3 md:block lg:hidden;
+    }
+
     /* Gallery Modal */
     .gallery__trigger {
       transition: opacity 0.2s ease;
