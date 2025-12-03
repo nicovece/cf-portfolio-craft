@@ -10,8 +10,9 @@
 		</title>
 
 		{{ craft.vite.script('src/js/main.ts', false) }}
+		{% set pageClass = 'page-' ~ entry.section.handle ?? 'home' %}
 	</head>
-	<body>
+	<body class="flex min-h-screen flex-col {{ pageClass }}">
 		{% include '_modules/site-nav' %}
 		<main>
 			{% block content %}

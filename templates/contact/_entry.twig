@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block content %}
-	<article class="mx-auto max-w-6xl px-4 py-8">
-		<h1>{{ entry.title }}</h1>
-		{# Content will go here #}
-	</article>
+	{# Intro Section #}
+	<section class="section-intro section-max-width">
+		{% include '_partials/intro-text' with {
+			text: entry.introText
+		} only %}
+	</section>
 {% endblock %}
-

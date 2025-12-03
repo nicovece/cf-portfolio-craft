@@ -1,15 +1,12 @@
 <footer class="mt-auto border-t border-gray-200">
-	<div class="mx-auto max-w-6xl px-4 py-6">
+	<div class="section-max-width mx-auto py-12">
 		<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-			{# Copyright #}
-			<p class="text-sm text-gray-500">
-				&copy; {{ now|date('Y') }} {{ siteName }}
-			</p>
+			<h5 class="text-fs-base text-accent font-medium">Tschüssi!</h5>
 
 			{# Social Links from Global Set #}
-			{% if settings.socialLinks|length %}
+			{% if socialLinksSettings.socialLinks|length %}
 				<ul class="flex items-center gap-4">
-					{% for link in settings.socialLinks %}
+					{% for link in socialLinksSettings.socialLinks %}
 						<li>
 							<a
 								href="{{ link.url }}"
