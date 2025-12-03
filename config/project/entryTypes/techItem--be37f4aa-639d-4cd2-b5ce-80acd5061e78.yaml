@@ -69,6 +69,6 @@ showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{techItemName}'
+titleFormat: '{techItemName} - {techItemCategory}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

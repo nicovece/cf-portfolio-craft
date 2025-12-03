@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: isSubsection
+instructions: 'When enabled, this section is treated as a subsection of the previous one and its heading is rendered as <h3> instead of <h2>.'
+name: 'Is Subsection'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Main section'
+  onLabel: Subsection
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

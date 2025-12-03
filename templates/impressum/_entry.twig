@@ -1,0 +1,12 @@
+{% extends '_layouts/base.twig' %}
+{% block title %}
+	{{ entry.title }} - {{ siteName }}
+{% endblock %}
+{% block content %}
+	<section class="section-intro section-max-width">
+		<h1 class="intro-text font-medium">{{ entry.title }}</h1>
+		{% include '_partials/intro-text' with {
+			text: entry.introText
+		} only %}
+	</section>
+{% endblock %}

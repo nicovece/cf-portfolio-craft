@@ -109,6 +109,57 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-12-06T12:43:04+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d279a878-3e10-41ab-a412-dd45ff93f6bb # Is Collapsible
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 783d8790-e0a3-4741-b4b6-58ed45925508
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-12-06T12:43:04+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: a677eac8-4b8d-45c6-9eaa-fb2a6d55fc90 # Summary Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cfb1eb45-e8d0-499d-b39e-e85232bbd2e9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-12-06T12:43:04+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: dc423ad9-f1dd-4b89-8f72-b8dd4ed977d2 # Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e31d5e8f-68f7-4c61-8175-b49a07c56dfa
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: 3791c108-4dae-4788-b51f-e856c70b7e5d
         userCondition: null
@@ -120,6 +171,6 @@ showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: sectionTitle
+titleFormat: '{sectionTitle}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

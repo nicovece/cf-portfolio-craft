@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 19a0c149-8e70-447e-bd63-649c8095c65c # Impressum
+handle: impressum
+maxAuthors: 1
+name: Impressum
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  522e8e10-5cd3-4e4f-905e-6fbb9b08136c: # Nico's portfolio
+    enabledByDefault: true
+    hasUrls: true
+    template: impressum/_entry.twig
+    uriFormat: impressum
+type: single
