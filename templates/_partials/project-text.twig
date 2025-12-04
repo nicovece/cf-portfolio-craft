@@ -1,0 +1,55 @@
+{#
+  Project Text Section Rich Text Styling
+  Applies component classes to CKEditor content for project text sections
+  Usage: {% include '_partials/project-text' with { text: entry.text } only %}
+#}
+
+{{
+	text
+		|retcon(
+			[
+				['removeEmpty', 'body > p, body > h1, body > h2'],
+				[
+					'attr',
+					'body  strong',
+					{
+						class: 'font-medium'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > h2',
+					{
+						class: 'project-section-title'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > h3',
+					{
+						class: 'project-section-heading'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > ul',
+					{
+						class: 'list-disc pl-4 my-5 space-y-1'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > p',
+					{
+						class: 'my-5 leading-relaxed last:mb-0'
+					},
+					false
+				]
+			]
+		)
+		|raw
+}}

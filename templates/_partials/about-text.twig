@@ -1,0 +1,63 @@
+{#
+  About Text Rich Text Styling
+  Applies component classes to CKEditor content for intro sections
+  Usage: {% include '_partials/about-text' with { text: entry.body } only %}
+#}
+
+{{
+	text
+		|retcon(
+			[
+				['removeEmpty', 'body > p, body > h2, body > h3, body > h4'],
+				[
+					'attr',
+					'body > h3',
+					{
+						class: 'text-fs-base font-medium mt-0 mb-6'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > h4',
+					{
+						class: 'text-fs-small mt-16 mb-8 border-b border-current/25 pb-4'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > h5',
+					{
+						class: 'text-fs-small font-medium mt-16 mb-8 b'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > p',
+					{
+						class: 'text-xl mb-6 leading-relaxed'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > ul',
+					{
+						class: 'list-disc pl-6 mb-6 space-y-2'
+					},
+					false
+				],
+				[
+					'attr',
+					'body > * > a, body a',
+					{
+						class: 'link-inline border-accent hover:border-accent/50'
+					},
+					false
+				]
+			]
+		)
+		|raw
+}}
