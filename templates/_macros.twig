@@ -13,7 +13,7 @@
 	<a
 		href="{{ url }}"
     {% if isActive %}aria-current="page"{% endif %}
-		class="hover:border-accent block border-b-4 px-1 py-2 font-light transition-colors duration-300 {{
+		class="hover:border-accent block border-b-4 px-1 py-2 transition-colors duration-300 {{
 		isActive
 			? 'border-accent'
 			: 'border-transparent'
@@ -24,11 +24,28 @@
 {% endmacro %}
 
 {# Generate srcset attribute for responsive images #}
-  {% macro srcSet(image) %}
-    {{
-      [400, 800, 1200, 1600, 2400]|reduce(
-        (carry, v) => "#{carry}, #{image.getUrl("w" ~ v)} #{v}w",
-        ""
-      )
-    }}
+  {% macro srcSet(image, crop = false, aspectRatio = '3:2') %}
+    {% if crop %}
+      {# Parse aspect ratio (e.g., '3:2' -> width 3, height 2) #}
+      {% set ratioParts = aspectRatio|split(':') %}
+      {% set ratioWidth = ratioParts[0]|number_format %}
+      {% set ratioHeight = ratioParts[1]|number_format %}
+
+      {% set srcsetParts = [] %}
+      {% for width in [400, 800, 1200, 1600, 2400] %}
+        {% set height = (width * ratioHeight / ratioWidth)|round %}
+        {% set srcsetParts = srcsetParts|merge([
+          image.getUrl({ width: width, height: height, mode: 'crop' }) ~ ' ' ~ width ~ 'w'
+        ]) %}
+      {% endfor %}
+      {{ srcsetParts|join(', ') }}
+    {% else %}
+      {# Original behavior - no crop #}
+      {{
+        [400, 800, 1200, 1600, 2400]|reduce(
+          (carry, v) => carry ? "#{carry}, #{image.getUrl("w" ~ v)} #{v}w" : "#{image.getUrl("w" ~ v)} #{v}w",
+          ""
+        )
+      }}
+    {% endif %}
   {% endmacro %}

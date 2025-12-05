@@ -1,30 +1,41 @@
 {% import '_macros' as macros %}
-<article>
-	<h3 class="text-lg font-medium">teaser</h3>
-	{% set image = entry.heroImage.one() %}
-	{% if image %}
-		<img
-			src="{{ image.getUrl('w1200') }}"
-			srcset="{{ macros.srcSet(image) }}"
-			sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-			alt="{{ image.title }}"
-			class="h-auto w-full"
-			loading="lazy"
-		/>
-	{% endif %}
-
-	{# 5. Title as link to detail page #}
-	<h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
-
-	{# 6. Short description #}
-
-	{# 7. Tech stack tags - Essential Only #}
+<article class="project-teaser flex flex-col gap-6">
+	<h3 class="text-fs-base">
+		<a href="{{ entry.url }}" class="border-accent/50 hover:border-accent inline-block border-b lg:leading-8">
+			<strong>{{ entry.title }}</strong>
+		</a>
+		<span class="hidden lg:inline">-</span>
+		<span class="block lg:inline">{{ entry.shortDescription }}</span>
+	</h3>
 	{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
 	{% if essentialTech|length %}
-		<ul>
+		<ul class="font-fs-small text-mediumlight flex flex-wrap gap-2">
 			{% for tech in essentialTech %}
-				<li>{{ tech.techItemName }}</li>
+				<li>{{ tech.techItemName }}{% if not loop.last %},{% endif %}</li>
 			{% endfor %}
 		</ul>
 	{% endif %}
+	{% set image = entry.heroImage.one() %}
+	{% if image %}
+		<img
+			src="{{
+			image.getUrl({
+				width: 1200,
+				height: 800,
+				mode: 'crop'
+			})
+			}}"
+			srcset="{{ macros.srcSet(image, true, '3:2') }}"
+			sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+			alt="{{ image.title }}"
+			class="project-teaser-image h-auto w-3/7"
+			loading="lazy"
+		/>
+	{% endif %}
+	{% if entry.description %}
+		<div class="text-fs-small leading-relaxed">
+			{{ entry.description }}
+		</div>
+	{% endif %}
+	<a href="{{ entry.url }}" class="link-inline text-fs-small border-accent/50 hover:border-accent m-0">View Project</a>
 </article>

@@ -6,47 +6,45 @@
 {% endblock %}
 
 {% block content %}
-	<article class="mx-auto max-w-7xl px-4 py-8">
-		{# Hero Image #}
-		{% set heroImage = entry.heroImage.one() %}
-		{% if heroImage %}
-			<img
-				src="{{ heroImage.getUrl('w1200') }}"
-				srcset="{{ macros.srcSet(heroImage) }}"
-				sizes="100vw"
-				alt="{{ heroImage.title }}"
-				class="mb-8 h-auto w-full"
-			/>
-		{% endif %}
-
-		{# Title #}
-		<h1>{{ entry.title }}</h1>
-
-		{# Meta: Date + Links #}
-		<div class="my-4 flex gap-4">
-			{% if entry.publishDate %}
-				<span>{{ entry.publishDate|date('F Y') }}</span>
-			{% endif %}
-
-			{% if entry.projectUrl %}
-				<a href="{{ entry.projectUrl }}" target="_blank" rel="noopener">View Project →</a>
-			{% endif %}
-
-			{% if entry.githubUrl %}
-				<a href="{{ entry.githubUrl }}" target="_blank" rel="noopener">GitHub →</a>
-			{% endif %}
-		</div>
-
+	<section class="project-section-intro section-max-width" aria-labelledby="project-heading">
+		<h1 class="intro-text mb-4">
+			<strong class="font-medium">{{ entry.title }}</strong>
+			<span class="hidden md:inline">-</span>
+			<span class="block md:inline">{{ entry.shortDescription }}</span>
+		</h1>
 		{# Tech Stack - Essential Only #}
 		{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
 		{% if essentialTech|length %}
-			<ul class="my-4 flex flex-wrap gap-2">
+			<ul class="font-fs-small mt-4 mb-8 flex flex-wrap gap-1 text-gray-600">
 				{% for tech in essentialTech %}
-					<li class="bg-gray-100 px-2 py-1 text-sm">{{ tech.techItemName }}</li>
+					<li>{{ tech.techItemName }}{% if not loop.last %},{% endif %}</li>
 				{% endfor %}
 			</ul>
 		{% endif %}
 
+		{% if entry.githubUrl %}
+			<p class="mb-4">
+				<a href="{{ entry.githubUrl }}" class="link-inline text-fs-medium ml-0" target="_blank" rel="noopener">
+					Github repository
+				</a>
+				{% if entry.helpTextGithubUrl %}
+					<small class="text-fs-smaller mt-2 block text-gray-600 italic">{{ entry.helpTextGithubUrl }}</small>
+				{% endif %}
+			</p>
+		{% endif %}
+
+		{% if entry.projectUrl %}
+			<p>
+				<a href="{{ entry.projectUrl }}" class="link-inline text-fs-medium ml-0" target="_blank" rel="noopener">
+					Live website
+				</a>
+				{% if entry.helpText %}
+					<small class="text-fs-smaller mt-2 block text-gray-600 italic">{{ entry.helpText }}</small>
+				{% endif %}
+			</p>
+		{% endif %}
+	</section>
+	<article class="mt-24 text-lg/7 md:mt-32">
 		{% set contentSections = entry.contentSections.all() %}
 
 		{% if contentSections|length %}
@@ -56,102 +54,166 @@
 
 				{# OVERVIEW BLOCK #}
 				{% case 'overview' %}
-				<section class="my-8">
-					<h2>{{ section.sectionTitle }}</h2>
+				<section class="section-max-width my-8">
+					<div class="max-w-4xl">
+						<h2 id="{{ section.sectionTitle|lower|replace(' ', '-') }}" class="project-section-title">
+							{{ section.sectionTitle }}
+						</h2>
 
-					<ul class="list-unstyled my-4">
-						{% if section.role %}
-							<li><strong>Role:</strong> {{ section.role }}</li>
+						{% if section.introText %}
+							{% include '_partials/project-text' with {
+								text: section.introText
+							} only %}
 						{% endif %}
-						{% if section.context %}
-							<li><strong>Context:</strong> {{ section.context }}</li>
-						{% endif %}
-					</ul>
 
-					{% set essentialTech =
-						entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential')
-					%}
-					{% if essentialTech|length %}
-						<ul class="my-4 flex flex-wrap gap-2">
-							{% for tech in essentialTech %}
-								<li class="bg-gray-100 px-2 py-1 text-sm">{{ tech.techItemName }}</li>
-							{% endfor %}
+						<ul class="list-unstyled my-4 space-y-4">
+							{% if section.role %}
+								<li><strong class="font-medium">Role:</strong> {{ section.role }}</li>
+							{% endif %}
+							{% if section.context %}
+								<li><strong class="font-medium">Context:</strong> {{ section.context }}</li>
+							{% endif %}
+							{% set essentialTech =
+								entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential')
+							%}
+							{% if essentialTech|length %}
+								<li>
+									<strong class="font-medium">Stack:</strong> {% for tech in essentialTech %}
+										{{ tech.techItemName }}{% if not loop.last %}, {% endif %}
+									{% endfor %}
+								</li>
+							{% endif %}
 						</ul>
-					{% endif %}
 
-					{% if section.introText %}
-						<div class="prose">
-							{{ section.introText }}
-						</div>
-					{% endif %}
+						{% if section.outroText %}
+							{% include '_partials/project-text' with {
+								text: section.outroText
+							} only %}
+						{% endif %}
+
+						{% if section.isCollapsible %}
+							<details
+								class="project__details group {% if not section.introText %}after:block open:after:hidden{% endif %} -mx-8 px-8 pt-3 pb-8 transition-colors duration-200 after:mt-4 after:h-px after:w-full after:bg-current/25 after:content-[''] open:bg-gray-100"
+							>
+								<summary
+									class="text-fs-smaller flex w-fit cursor-pointer items-center font-medium transition-colors duration-200 before:mr-1 before:inline-block before:text-4xl before:font-extralight before:transition-transform before:duration-200 before:ease-in-out before:content-['+'] group-open:before:rotate-45 hover:text-accent hover:before:scale-125"
+								>
+									<span class="inline-block group-open:hidden">Show&nbsp;</span>
+									<span class="hidden group-open:inline-block">Hide&nbsp;</span>
+									<span>details</span>
+								</summary>
+								{% include '_partials/project-text' with {
+									text: section.content
+								} only %}
+							</details>
+						{% endif %}
+					</div>
 				</section>
 
 				{# TEXT SECTION BLOCK #}
 				{% case 'textSection' %}
-				<section class="my-8">
-					<h2>{{ section.sectionTitle }}</h2>
-					<div class="prose">
-						{{ section.introText }}
+				<section id="{{ section.sectionTitle|lower|replace(' ', '-') }}" class="section-max-width my-8">
+					<div class="max-w-4xl">
+						{% if section.isSubsection %}
+							<h3 class="project-section-heading">{{ section.sectionTitle }}</h3>
+						{% else %}
+							<h2 class="project-section-title">{{ section.sectionTitle }}</h2>
+						{% endif %}
+						{% include '_partials/project-text' with {
+							text: section.introText
+						} only %}
+						{% if section.isCollapsible %}
+							<details
+								class="project__details group {% if not section.introText %}after:block open:after:hidden{% endif %} -mx-8 px-8 pt-3 pb-8 transition-colors duration-200 after:mt-4 after:h-px after:w-full after:bg-current/25 after:content-[''] open:bg-gray-100"
+							>
+								<summary
+									class="text-fs-smaller flex w-fit cursor-pointer items-center font-medium transition-colors duration-200 before:mr-1 before:inline-block before:text-4xl before:font-extralight before:transition-transform before:duration-200 before:ease-in-out before:content-['+'] group-open:before:rotate-45 hover:text-accent hover:before:scale-125"
+								>
+									<span class="inline-block group-open:hidden">Show&nbsp;</span>
+									<span class="hidden group-open:inline-block">Hide&nbsp;</span>
+									<span>details</span>
+									{# {% if section.introText %}
+										<span class="inline-block group-open:hidden">Read &nbsp;</span>
+									{% endif %}<span class="hidden group-open:inline-block">Collapse&nbsp;</span>{{ section.summaryText ? : section.sectionTitle }}{% if
+										section.introText %}
+										&nbsp;<span class="hidden group-open:inline-block">details</span>
+									{% endif %} #}
+								</summary>
+								{% include '_partials/project-text' with {
+									text: section.content
+								} only %}
+							</details>
+						{% endif %}
 					</div>
-					{% if section.isCollapsible %}
-						<details class="project__details">
-							<summary>
-								{% if section.summaryText %}
-									{{ section.summaryText }}
-								{% else %}
-									Read more about {{ section.sectionTitle }}
-								{% endif %}
-							</summary>
-							<div class="prose">
-								{{ section.content }}
-							</div>
-						</details>
-					{% endif %}
 				</section>
 
 				{# IMAGE SECTION BLOCK #}
 				{% case 'imageSection' %}
 				{% set image = section.image.one() %}
 				{% if image %}
-					<figure class="my-8">
-						<img
-							src="{{ image.getUrl('w1200') }}"
-							srcset="{{ macros.srcSet(image) }}"
-							sizes="(min-width: 700px) 50vw, 100vw"
-							alt="{{ section.altText }}"
-							class="h-auto w-full"
-							loading="lazy"
-						/>
-						{% if section.caption %}
-							<figcaption class="mt-2 text-sm text-gray-600">
-								{{ section.caption }}
-							</figcaption>
-						{% endif %}
-					</figure>
+					<section id="{{ section.sectionTitle|lower|replace(' ', '-') }}" class="section-max-width my-8">
+						<div class="max-w-4xl">
+							<figure class="-mx-5 my-8 bg-gray-100 px-5 py-5 transition-colors duration-200 md:-mx-8 md:px-8 md:py-8">
+								<img
+									src="{{ image.getUrl('w1200') }}"
+									srcset="{{ macros.srcSet(image) }}"
+									sizes="(min-width: 700px) 50vw, 100vw"
+									alt="{{ section.altText }}"
+									class="h-auto w-full"
+									loading="lazy"
+								/>
+								<figcaption class="mt-6 text-sm text-gray-600">
+									{{ section.caption ? : section.altText }}
+								</figcaption>
+							</figure>
+						</div>
+					</section>
 				{% endif %}
 
 				{% endswitch %}
 			{% endfor %}
 		{% endif %}
 
+		{# TECH STACK #}
+		{% set techStackItems = entry.techStackItems.all() %}
+		{% if techStackItems|length %}
+			<section class="mt-8 bg-darker py-12 text-white lg:pt-20 lg:pb-32">
+				<div class="section-max-width">
+					<h5 class="text-fs-base mb-8">Tech Stack</h5>
+					<ul class="text-fs-medium my-4 list-disc space-y-4 pl-4">
+						{% for item in techStackItems %}
+							<li>
+								{{ item.techItemName }} {% if item.techItemDescription %}
+									<small class="text-fs-smaller italic">({{ item.techItemDescription }})</small>
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</section>
+		{% endif %}
+
 		{# Gallery #}
 		{% set galleryItems = entry.gallery.all() %}
 		{% if galleryItems|length %}
-			<section class="mt-8 grid grid-cols-2 gap-4">
+			<section
+				class="grid grid-cols-[1fr_1fr] gap-8 bg-dark p-8 text-white max-sm:mx-auto md:gap-12 md:p-12 lg:grid-cols-[1fr_1fr_1fr_1fr] lg:gap-16 lg:p-16"
+			>
 				{% for item in galleryItems %}
 					{% set image = item.image.one() %}
 					{% if image %}
-						<figure>
+						<figure class="project-gallery-item {{ item.cssClasses ? '' ~ item.cssClasses ~ '' : '' }}">
 							{% if item.hasModal %}
 								{# Clickable image that opens modal #}
 								{% set modalImg = item.modalImage.one() ? : image %}
 								{% set modalCap = item.modalCaption ? : item.caption %}
 								<button
 									type="button"
-									class="gallery__trigger cursor-pointer border-0 bg-transparent p-0"
+									class="gallery__trigger flex w-full cursor-pointer items-start border-0 bg-transparent p-0"
 									data-modal-image="{{ modalImg.getUrl('w2400') }}"
 									data-modal-alt="{{ item.altText }}"
-									{{ modalCap ? 'data-modal-caption="' ~ modalCap ~ '"' : '' }}
+									data-modal-caption="{{ (modalCap ? : item.altText)|e('html_attr') }}"
+									data-modal-entry-title="{{ entry.title }}"
 									aria-label="Open larger view of {{ item.altText }}"
 								>
 									<img
@@ -160,7 +222,6 @@
 										sizes="(min-width: 700px) 50vw, 100vw"
 										alt="{{ item.altText }}"
 										loading="lazy"
-										{{ item.cssClasses ? 'class="' ~ item.cssClasses ~ '"' : '' }}
 									/>
 								</button>
 							{% else %}
@@ -171,14 +232,11 @@
 									sizes="(min-width: 700px) 50vw, 100vw"
 									alt="{{ item.altText }}"
 									loading="lazy"
-									{{ item.cssClasses ? 'class="' ~ item.cssClasses ~ '"' : '' }}
 								/>
 							{% endif %}
-							{% if item.caption %}
-								<figcaption class="mt-2 text-sm text-gray-600">
-									{{ item.caption }}
-								</figcaption>
-							{% endif %}
+							<figcaption class="mt-2 text-sm text-gray-500">
+								{{ item.caption ? : item.altText }}
+							</figcaption>
 						</figure>
 					{% endif %}
 				{% endfor %}
@@ -186,38 +244,38 @@
 
 			{# Modal markup - only if at least one item has modal enabled #}
 			{% if galleryItems|filter(item => item.hasModal)|length %}
-				<dialog id="gallery-modal" class="gallery__modal fixed inset-0 z-50 m-0 h-full w-full border-0 bg-black/90 p-0">
-					<div class="flex h-full w-full items-center justify-center p-4">
-						<div class="relative max-h-full max-w-7xl">
-							{# Close button #}
-							<button
-								type="button"
-								class="gallery__modal__close absolute top-4 right-4 z-10 rounded bg-white/10 px-4 py-2 text-white hover:bg-white/20"
-								aria-label="Close modal"
-							>
-								✕ Close
-							</button>
-
-							{# Image container #}
-							<img
-								id="gallery-modal-image"
-								src=""
-								srcset=""
-								sizes="60vw"
-								alt=""
-								class="max-h-[60vh] w-auto"
-								loading="eager"
-							/>
-
-							{# Caption (if exists) #}
-							<p id="gallery-modal-caption" class="mt-4 text-center text-white"></p>
-						</div>
+				<dialog
+					id="gallery-modal"
+					class="gallery__modal fixed inset-0 z-50 m-0 h-full max-h-full w-full max-w-full border-0 bg-transparent p-0 backdrop:bg-darker/85 backdrop:backdrop-blur-sm"
+				>
+					<div
+						class="gallery__modal__content pointer-events-none flex w-full flex-col items-center justify-center pb-24 *:pointer-events-auto"
+					>
+						<button
+							type="button"
+							class="gallery__modal__close link-inline fixed top-0 right-4 z-10 min-h-8 min-w-8 cursor-pointer text-white hover:text-accent max-sm:border-none md:top-6 md:right-6"
+							aria-label="Close modal"
+						>
+							✕ <span class="sr-only md:not-sr-only">Close</span>
+						</button>
+						<p
+							id="gallery-modal-caption"
+							class="gallery__modal__caption sticky top-0 mb-24 block w-full bg-darker/85 py-8 text-center text-white backdrop-blur-sm"
+						></p>
+						<figure class="w-8/10 xl:w-1/2">
+							{# <figcaption class="my-4 text-sm text-gray-500">
+								<p id="gallery-modal-caption" class="mt-4 text-center text-white inline-block"></p>
+							</figcaption> #}
+							<img id="gallery-modal-image" src="" srcset="" sizes="60vw" alt="" class="w-full" loading="eager" />
+						</figure>
 					</div>
 				</dialog>
 			{% endif %}
 		{% endif %}
 
 		{# Back link #}
-		<a href="{{ url('projects') }}" class="mt-8 inline-block">← Back to Projects</a>
+		<div class="section-max-width">
+			<a href="{{ url('projects') }}" class="mt-8 inline-block">← Back to Projects</a>
+		</div>
 	</article>
 {% endblock %}

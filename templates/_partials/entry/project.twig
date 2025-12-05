@@ -1,31 +1,61 @@
 {% import '_macros' as macros %}
-<article>
-	{# 4. Display hero image if exists #}
-	{# Asset field (image) #}
-	{% set image = entry.heroImage.one() %}
-	{% if image %}
-		<img
-			src="{{ image.getUrl('w1200') }}"
-			srcset="{{ macros.srcSet(image) }}"
-			sizes="(min-width: 1024px) 50vw, 100vw"
-			alt="{{ image.title }}"
-			class="h-auto w-full"
-			loading="lazy"
-		/>
-	{% endif %}
+<article class="project-entry mb-32 last:mb-24 xl:mb-48 3xl:mb-56">
+	<div class="section-max-width mb-8">
+		<h1 class="text-xl lg:text-2xl">
+			<a href="{{ entry.url }}" class="inline-block border-b border-accent/50 hover:border-accent lg:leading-8">
+				<strong class="font-medium">{{ entry.title }}</strong>
+				<span class="hidden md:inline">-</span>
+				<span class="block md:inline">{{ entry.shortDescription }}</span>
+			</a>
+		</h1>
 
-	{# 5. Title as link to detail page #}
-	<h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
-
-	{# 6. Short description #}
-
-	{# 7. Tech stack tags - Essential Only #}
-	{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
-	{% if essentialTech|length %}
-		<ul>
-			{% for tech in essentialTech %}
-				<li>{{ tech.techItemName }}</li>
-			{% endfor %}
-		</ul>
-	{% endif %}
+		{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
+		{% if essentialTech|length %}
+			<ul class="font-fs-small mt-4 flex flex-wrap gap-1 text-gray-600">
+				{% for tech in essentialTech %}
+					<li>{{ tech.techItemName }}{% if not loop.last %},{% endif %}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		{% if entry.description %}
+			<div class="text-fs-medium order-2 mt-4 mb-12 max-w-2xl leading-relaxed 2xl:max-w-3xl 3xl:max-w-4xl">
+				{{ entry.description }}
+			</div>
+		{% endif %}
+	</div>
+	<div class="bg-dark">
+		<div
+			class="flex-- flex-col-- grid grid-cols-[1fr_1fr] gap-8 p-8 text-white max-sm:mx-auto md:gap-12 md:p-12 lg:grid lg:w-[90%] lg:grid-cols-[5fr_3fr_1fr] lg:gap-16 lg:p-16"
+		>
+			{% set galleryItems = entry.gallery.all()|filter(item => item.cssClasses and 'cover' in item.cssClasses) %}
+			{% if galleryItems|length %}
+				{% for item in galleryItems %}
+					{% set image = item.image.one() %}
+					{% if image %}
+						<figure class="{{ loop.first ? 'max-lg:col-span-2' : '' }} order-3 block">
+							<img
+								src="{{ image.getUrl('w1200') }}"
+								srcset="{{ macros.srcSet(image) }}"
+								sizes="(min-width: 1024px) 50vw, 100vw"
+								alt="{{ image.title }}"
+								class="h-auto w-full"
+								loading="lazy"
+							/>
+							<figcaption class="font-fs-smaller sr-only mt-4 text-mediumlight">
+								{{ image.caption ?? image.title }}
+							</figcaption>
+						</figure>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</div>
+	</div>
+	<div class="section-max-width mt-6">
+		<a
+			href="{{ entry.url }}"
+			class="link-inline text-fs-base order-last m-0 mt-4 inline-block border-accent/50 font-normal hover:border-accent"
+		>
+			View Project
+		</a>
+	</div>
 </article>

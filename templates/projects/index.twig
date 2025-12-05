@@ -5,13 +5,11 @@
 {% endblock %}
 
 {% block content %}
-	<div class="mx-auto max-w-6xl px-4 py-8">
-		<h1>Projects</h1>
-
-		{# 1. Query all projects #}
+	<section class="section-intro section-max-width">
+		<h1 class="intro-text">Here is something that distracted me from working on my portfolio</h1>
+	</section>
+	<div class="mx-auto mt-0">
 		{% set projects = craft.entries().section('projects').orderBy('postDate DESC').all() %}
-
-		{# 2. Check if any exist #}
 		{% if projects|length %}
 			{% for project in projects %}
 				{{ project.render() }}
