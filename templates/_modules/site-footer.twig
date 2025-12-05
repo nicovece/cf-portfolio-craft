@@ -1,25 +1,24 @@
-<footer class="mt-auto border-t border-gray-200">
-	<div class="section-max-width mx-auto py-12">
-		<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-			<h5 class="text-fs-base text-accent font-medium">Tschüssi!</h5>
+<footer class="section-max-width mx-auto py-12">
+	<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+		<h5 class="text-fs-base font-medium text-accent">Tschüssi!</h5>
 
-			{# Social Links from Global Set #}
-			{% if socialLinksSettings.socialLinks|length %}
-				<ul class="flex items-center gap-4">
-					{% for link in socialLinksSettings.socialLinks %}
-						<li>
-							<a
-								href="{{ link.url }}"
-								target="_blank"
-								rel="noopener"
-								class="text-sm text-gray-500 transition-colors hover:text-gray-900"
-							>
-								{{ link.platform|lower }}
-							</a>
-						</li>
-					{% endfor %}
-				</ul>
-			{% endif %}
-		</div>
+		{# Social Links from Global Set #}
+		{% if socialLinksSettings.socialLinks|length %}
+			<ul class="flex items-center gap-4">
+				{% for link in socialLinksSettings.socialLinks %}
+					<li>
+						<a
+							href="{{ link.url }}"
+							target="_blank"
+							rel="noopener"
+							class="text-sm text-gray-500 transition-colors hover:text-gray-900"
+						>
+							{{ link.platform|lower }}
+						</a>
+					</li>
+				{% endfor %}
+				<li><a href="/impressum" class="text-sm text-gray-500 transition-colors hover:text-gray-900">Impressum</a></li>
+			</ul>
+		{% endif %}
 	</div>
 </footer>
