@@ -9,6 +9,8 @@ additional_fqdns: []
 database:
     type: mysql
     version: "8.0"
+upload_dirs:
+    - web/uploads
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []

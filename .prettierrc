@@ -1,11 +1,19 @@
 {
-  "plugins": ["@zackad/prettier-plugin-twig", "prettier-plugin-tailwindcss"],
-  "semi": false,
-  "singleQuote": false,
-  "tabWidth": 2,
-  "useTabs": true,
-  "trailingComma": "none",
-  "printWidth": 120,
-  "htmlWhitespaceSensitivity": "css"
+	"plugins": ["@zackad/prettier-plugin-twig", "prettier-plugin-tailwindcss"],
+	"tailwindStylesheet": "src/css/main.css",
+	"overrides": [
+		{
+			"files": ["*.twig"],
+			"options": {
+				"parser": "twig"
+			}
+		}
+	],
+	"semi": false,
+	"singleQuote": false,
+	"tabWidth": 2,
+	"useTabs": true,
+	"trailingComma": "none",
+	"printWidth": 120,
+	"htmlWhitespaceSensitivity": "css"
 }
-
