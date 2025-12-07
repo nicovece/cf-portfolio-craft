@@ -1,7 +1,7 @@
 {% import '_macros' as macros %}
 <article class="project-teaser flex flex-col gap-6">
 	<h3 class="text-fs-base">
-		<a href="{{ entry.url }}" class="border-accent/50 hover:border-accent inline-block border-b lg:leading-8">
+		<a href="{{ entry.url }}" class="inline-block border-b border-accent/50 hover:border-accent lg:leading-8">
 			<strong>{{ entry.title }}</strong>
 		</a>
 		<span class="hidden lg:inline">-</span>
@@ -9,7 +9,7 @@
 	</h3>
 	{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
 	{% if essentialTech|length %}
-		<ul class="font-fs-small text-mediumlight flex flex-wrap gap-2">
+		<ul class="font-fs-small flex flex-wrap gap-2 text-mediumlight">
 			{% for tech in essentialTech %}
 				<li>{{ tech.techItemName }}{% if not loop.last %},{% endif %}</li>
 			{% endfor %}
@@ -27,7 +27,7 @@
 			}}"
 			srcset="{{ macros.srcSet(image, true, '3:2') }}"
 			sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-			alt="{{ image.title }}"
+			alt="{{ image.alt ? : image.title }}"
 			class="project-teaser-image h-auto w-3/7"
 			loading="lazy"
 		/>
@@ -37,5 +37,5 @@
 			{{ entry.description }}
 		</div>
 	{% endif %}
-	<a href="{{ entry.url }}" class="link-inline text-fs-small border-accent/50 hover:border-accent m-0">View Project</a>
+	<a href="{{ entry.url }}" class="link-inline text-fs-small m-0 border-accent/50 hover:border-accent">View Project</a>
 </article>

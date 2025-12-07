@@ -1,0 +1,18 @@
+{# TECH STACK #}
+{% set techStackItems = entry.techStackItems.eagerly().all() %}
+{% if techStackItems|length %}
+	<section class="mt-8 bg-darker py-12 text-white lg:pt-20 lg:pb-32">
+		<div class="section-max-width">
+			<h5 class="text-fs-base mb-8">Tech Stack</h5>
+			<ul class="text-fs-medium my-4 list-disc space-y-4 pl-4">
+				{% for item in techStackItems %}
+					<li>
+						<strong class="font-medium">{{ item.techItemName }}</strong> {% if item.techItemDescription %}
+							<span>({{ item.techItemDescription }})</span>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+{% endif %}

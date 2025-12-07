@@ -8,65 +8,9 @@
 
 @font-face {
 	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-100.woff2") format("woff2");
-	font-weight: 100;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-100italic.woff2") format("woff2");
-	font-weight: 100;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-200.woff2") format("woff2");
-	font-weight: 200;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-200italic.woff2") format("woff2");
-	font-weight: 200;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-300.woff2") format("woff2");
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-300italic.woff2") format("woff2");
-	font-weight: 300;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
 	src: url("/fonts/fira-sans-v18-latin-regular.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-italic.woff2") format("woff2");
-	font-weight: 400;
-	font-style: italic;
 	font-display: swap;
 }
 
@@ -78,183 +22,9 @@
 	font-display: swap;
 }
 
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-500italic.woff2") format("woff2");
-	font-weight: 500;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-600.woff2") format("woff2");
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-600italic.woff2") format("woff2");
-	font-weight: 600;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-700.woff2") format("woff2");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-700italic.woff2") format("woff2");
-	font-weight: 700;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-800.woff2") format("woff2");
-	font-weight: 800;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-800italic.woff2") format("woff2");
-	font-weight: 800;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-900.woff2") format("woff2");
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Fira Sans";
-	src: url("/fonts/fira-sans-v18-latin-900italic.woff2") format("woff2");
-	font-weight: 900;
-	font-style: italic;
-	font-display: swap;
-}
-
-/* ============================================
-  Satoshi Font Faces
-  Path: web/fonts/ (accessible at /fonts/)
-  ============================================ */
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-Light.woff2") format("woff2");
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-LightItalic.woff2") format("woff2");
-	font-weight: 300;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-Italic.woff2") format("woff2");
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-Medium.woff2") format("woff2");
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-MediumItalic.woff2") format("woff2");
-	font-weight: 500;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-Bold.woff2") format("woff2");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-BoldItalic.woff2") format("woff2");
-	font-weight: 700;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-Black.woff2") format("woff2");
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-BlackItalic.woff2") format("woff2");
-	font-weight: 900;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
-	font-weight: 300 900;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Satoshi";
-	src: url("/fonts/Satoshi-VariableItalic.woff2") format("woff2");
-	font-weight: 300 900;
-	font-style: italic;
-	font-display: swap;
-}
-
 @theme {
 	/* Font Family */
 	--font-sans: "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-	/* --font-sans: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; */
 
 	/* Custom Font Sizes - stored as CSS variables, utilities defined in @layer utilities */
 	--font-size-fs-smaller: 1rem;
@@ -264,15 +34,8 @@
 	--font-size-fs-large: clamp(1.2rem, 0.033vw + 1.094rem, 1.6rem);
 	--font-size-fs-xlarge: clamp(2rem, 1.15rem + 1.5vw, 3.2rem);
 
-	--font-weight-thin: 100;
-	--font-weight-extralight: 200;
-	--font-weight-light: 300;
 	--font-weight-normal: 400;
 	--font-weight-medium: 500;
-	--font-weight-semibold: 600;
-	--font-weight-bold: 700;
-	--font-weight-extrabold: 800;
-	--font-weight-black: 900;
 
 	--color-accent: #ea514e;
 	--color-accent-dark: #e32c26;
@@ -327,16 +90,14 @@
 }
 
 @layer components {
-	/* Section Wrappers*/
-
 	/* Intro section - padding and margins */
 	.section-intro {
 		@apply mx-auto pt-24 pb-6;
-		@apply md:pt-20;
-		@apply 2xl:pt-48;
+		@apply md:pt-20 2xl:pt-48;
 	}
 
 	/* Centered section width - reusable constrained width layout */
+	/* I may have gotten too picky with this width handling. I should embrace my fate and let words wrap, happy and free. */
 	.section-max-width {
 		@apply mx-auto;
 		width: min(80%, 1280px);
@@ -356,28 +117,10 @@
 			width: min(84%, 1280px);
 		}
 	}
-	/* Custom 3xl breakpoint handling */
-	@media (min-width: 105rem) {
+	@media (min-width: var(--breakpoint-3xl)) {
 		.section-max-width {
 			width: min(80%, 1600px);
 		}
-	}
-
-	/* Full-width section layout - no width constraints */
-	.section-full {
-		width: 100%;
-	}
-
-	/* General section wrapper - standard padding */
-	.section-wrapper {
-		@apply px-4 py-12;
-		@apply md:px-8;
-		@apply lg:px-12;
-	}
-
-	/* Max-width container for content */
-	.section-container {
-		@apply mx-auto max-w-7xl;
 	}
 
 	/* Typography - Intro Section */
@@ -391,8 +134,7 @@
 	/* Base text styling for intro section */
 	.intro-text {
 		font-size: var(--font-size-fs-base);
-		@apply mb-6 leading-7;
-		@apply lg:mb-0 lg:leading-8;
+		@apply mb-6 leading-7 lg:mb-0 lg:leading-8;
 	}
 
 	.intro-text:first-child {
@@ -400,7 +142,7 @@
 	}
 
 	/* Custom 3xl breakpoint for intro text */
-	@media (min-width: 105rem) {
+	@media (min-width: var(--breakpoint-3xl)) {
 		.intro-text {
 			line-height: 3rem;
 		}
@@ -432,7 +174,7 @@
 	}
 
 	.gallery__modal::-webkit-scrollbar {
-		width: 6px; /* More reasonable width */
+		width: 6px;
 	}
 
 	.gallery__modal::-webkit-scrollbar-track {
@@ -459,8 +201,7 @@
 
 	/* Project Detail Content */
 	.project-section-intro {
-		@apply mx-auto pt-40 pb-6;
-		@apply md:pt-48;
+		@apply mx-auto pt-40 pb-6 md:pt-48;
 	}
 	.project-section-title {
 		font-size: var(--font-size-fs-smaller);
@@ -482,8 +223,8 @@
 		@apply max-h-screen w-auto;
 	}
 	.gallery__modal__caption strong {
-		@apply block;
-		@apply md:inline;
-		@apply after:ml-1 after:hidden after:font-normal after:text-current after:content-['-'] md:after:inline-block;
+		@apply block md:inline;
+		@apply after:ml-1 after:hidden after:font-normal after:text-current after:content-['-'];
+		@apply md:after:inline-block;
 	}
 }

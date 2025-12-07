@@ -1,0 +1,53 @@
+<section class="section-max-width my-8">
+	<div class="max-w-4xl">
+		<h2 id="{{ section.sectionTitle|lower|replace(' ', '-') }}" class="project-section-title">
+			{{ section.sectionTitle }}
+		</h2>
+
+		{% if section.introText %}
+			{% include '_partials/project-text' with {
+				text: section.introText
+			} only %}
+		{% endif %}
+
+		<ul class="list-unstyled my-4 space-y-4">
+			{% if section.role %}
+				<li><strong class="font-medium">Role:</strong> {{ section.role }}</li>
+			{% endif %}
+			{% if section.context %}
+				<li><strong class="font-medium">Context:</strong> {{ section.context }}</li>
+			{% endif %}
+			{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
+			{% if essentialTech|length %}
+				<li>
+					<strong class="font-medium">Stack:</strong> {% for tech in essentialTech %}
+						{{ tech.techItemName }}{% if not loop.last %}, {% endif %}
+					{% endfor %}
+				</li>
+			{% endif %}
+		</ul>
+
+		{% if section.outroText %}
+			{% include '_partials/project-text' with {
+				text: section.outroText
+			} only %}
+		{% endif %}
+
+		{% if section.isCollapsible %}
+			<details
+				class="project__details group {% if not section.introText %}after:block open:after:hidden{% endif %} -mx-8 px-8 pt-3 pb-8 transition-colors duration-200 after:mt-4 after:h-px after:w-full after:bg-current/25 after:content-[''] open:bg-gray-100"
+			>
+				<summary
+					class="text-fs-smaller flex w-fit cursor-pointer items-center font-medium transition-colors duration-200 before:mr-1 before:inline-block before:text-4xl before:font-extralight before:transition-transform before:duration-200 before:ease-in-out before:content-['+'] group-open:before:rotate-45 hover:text-accent hover:before:scale-125"
+				>
+					<span class="inline-block group-open:hidden">Show&nbsp;</span>
+					<span class="hidden group-open:inline-block">Hide&nbsp;</span>
+					<span>details</span>
+				</summary>
+				{% include '_partials/project-text' with {
+					text: section.content
+				} only %}
+			</details>
+		{% endif %}
+	</div>
+</section>

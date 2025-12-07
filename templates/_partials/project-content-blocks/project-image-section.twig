@@ -1,0 +1,21 @@
+{% import '_macros' as macros %}
+{% set image = section.image.eagerly().one() %}
+{% if image %}
+	<section id="{{ section.sectionTitle|lower|replace(' ', '-') }}" class="section-max-width my-8">
+		<div class="max-w-4xl">
+			<figure class="-mx-5 my-8 bg-gray-100 px-5 py-5 transition-colors duration-200 md:-mx-8 md:px-8 md:py-8">
+				<img
+					src="{{ image.getUrl('w1200') }}"
+					srcset="{{ macros.srcSet(image) }}"
+					sizes="(min-width: 700px) 50vw, 100vw"
+					alt="{{ section.altText }}"
+					class="h-auto w-full"
+					loading="lazy"
+				/>
+				<figcaption class="mt-6 text-sm text-gray-600">
+					{{ section.caption ? : section.altText }}
+				</figcaption>
+			</figure>
+		</div>
+	</section>
+{% endif %}
