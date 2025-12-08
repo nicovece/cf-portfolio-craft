@@ -30,3 +30,6 @@ Thumbs.db
 
 # 
 /autoscripts
+# Database exports
+*.sql
+*.sql.gz
