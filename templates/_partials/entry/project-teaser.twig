@@ -12,6 +12,11 @@
 		category: 'essential',
 		wrapperClasses: 'font-fs-small flex flex-wrap gap-2 text-gray-400'
 	} only %}
+	{% if entry.description %}
+		<div class="text-fs-small leading-relaxed">
+			{{ entry.description }}
+		</div>
+	{% endif %}
 	{% set image = entry.heroImage.one() %}
 	{% if image %}
 		<img
@@ -25,14 +30,9 @@
 			srcset="{{ macros.srcSet(image, true, '3:2') }}"
 			sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
 			alt="{{ image.alt ? : image.title }}"
-			class="project-teaser-image h-auto w-3/7"
+			class="project-teaser-image my-2 h-auto w-full md:w-1/2 lg:w-2/3"
 			loading="lazy"
 		/>
-	{% endif %}
-	{% if entry.description %}
-		<div class="text-fs-small leading-relaxed">
-			{{ entry.description }}
-		</div>
 	{% endif %}
 	<a href="{{ entry.url }}" class="link-inline text-fs-small m-0 border-accent/50 hover:border-accent">View Project</a>
 </article>

@@ -134,7 +134,7 @@
 	/* Base text styling for intro section */
 	.intro-text {
 		font-size: var(--font-size-fs-base);
-		@apply mb-6 leading-7 lg:leading-8;
+		@apply mb-6 leading-7 lg:leading-6;
 	}
 
 	.intro-text:first-child {
