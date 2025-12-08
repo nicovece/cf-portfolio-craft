@@ -7,14 +7,11 @@
 		<span class="hidden lg:inline">-</span>
 		<span class="block lg:inline">{{ entry.shortDescription }}</span>
 	</h3>
-	{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
-	{% if essentialTech|length %}
-		<ul class="font-fs-small flex flex-wrap gap-2 text-mediumlight">
-			{% for tech in essentialTech %}
-				<li>{{ tech.techItemName }}{% if not loop.last %},{% endif %}</li>
-			{% endfor %}
-		</ul>
-	{% endif %}
+	{% include '_modules/project-tech-stack' with {
+		entry: entry,
+		category: 'essential',
+		wrapperClasses: 'font-fs-small flex flex-wrap gap-2 text-gray-400'
+	} only %}
 	{% set image = entry.heroImage.one() %}
 	{% if image %}
 		<img

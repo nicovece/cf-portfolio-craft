@@ -13,18 +13,21 @@
 			<span class="block md:inline">{{ entry.shortDescription }}</span>
 		</h1>
 		{# Tech Stack - Essential Only #}
-		{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
-		{% if essentialTech|length %}
-			<ul class="font-fs-small mt-4 mb-8 flex flex-wrap gap-1 text-gray-600">
-				{% for tech in essentialTech %}
-					<li>{{ tech.techItemName }}{% if not loop.last %},{% endif %}</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
+		{% include '_modules/project-tech-stack' with {
+			entry: entry,
+			category: 'essential',
+			wrapperClasses: 'font-fs-small mt-4 mb-8 flex flex-wrap gap-1 text-gray-600',
+			itemsSeparator: ','
+		} only %}
 
 		{% if entry.githubUrl %}
 			<p class="mb-4">
-				<a href="{{ entry.githubUrl }}" class="link-inline text-fs-medium ml-0" target="_blank" rel="noopener">
+				<a
+					href="{{ entry.githubUrl }}"
+					class="link-inline text-fs-medium ml-0"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					Github repository
 				</a>
 				{% if entry.helpTextGithubUrl %}
@@ -35,7 +38,12 @@
 
 		{% if entry.projectUrl %}
 			<p>
-				<a href="{{ entry.projectUrl }}" class="link-inline text-fs-medium ml-0" target="_blank" rel="noopener">
+				<a
+					href="{{ entry.projectUrl }}"
+					class="link-inline text-fs-medium ml-0"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					Live website
 				</a>
 				{% if entry.helpText %}
@@ -71,9 +79,18 @@
 		{% endif %}
 
 		{# Tech Stack #}
-		{% include '_modules/project-tech-stack' with {
-			entry: entry
-		} only %}
+		<section class="mt-8 bg-darker py-12 text-white lg:pt-20 lg:pb-32">
+			<div class="section-max-width">
+				<h5 class="text-fs-base mb-8">Tech Stack</h5>
+				{% include '_modules/project-tech-stack' with {
+					entry: entry,
+					category: ['essential', 'fullList'],
+					wrapperClasses: 'text-fs-medium my-4 list-disc space-y-4 pl-4',
+					itemsHaveDescription: true,
+					itemsSeparator: ' '
+				} only %}
+			</div>
+		</section>
 		{# Gallery #}
 		{% include '_modules/project-gallery' with {
 			entry: entry
