@@ -22,34 +22,15 @@
 			</h2>
 			<h2 class="mb-16 text-2xl">Some quick example if you don't want to click further:</h2>
 		</div>
-		{% set projects =
-			craft.entries().section('projects').slug(
-				['nomalyze', 'flicktionary-react-client', 'flicktionary-restful-api', 'happenly-pwa']
-			).eagerly().all()
-		%}
-		{% if projects|length %}
-			<div
-				class="flex flex-col gap-24 bg-dark py-24 text-white lg:grid lg:grid-cols-2 lg:gap-12 lg:p-12 xl:gap-16 xl:p-16 2xl:gap-40 2xl:p-24"
-			>
-				{% for project in projects %}
-					{% include '_partials/entry/project-teaser' with {
-						entry: project
-					} only %}
-				{% endfor %}
-			</div>
-		{% else %}
-			<p>
-				No projects yet.
-			</p>
-		{% endif %}
+		{% include '_modules/projects-grid' only %}
 	</section>
 
 	{# About Box Section #}
 	<div class="bg-darker pt-24 pb-32">
-		<section class="about-box section-max-width text-fs-small flex gap-16 text-white">
+		<section class="about-box section-max-width text-fs-small flex flex-col gap-6 text-white lg:flex-row lg:gap-16">
 			{% set aboutImage = entry.profileImage.eagerly().one() %}
 			{% if aboutImage %}
-				<div class="about-image-container w-1/3">
+				<div class="about-image-container w-full md:w-1/3">
 					<img
 						src="{{
 						aboutImage.getUrl({
@@ -67,7 +48,7 @@
 				</div>
 			{% endif %}
 			{% if entry.calloutText %}
-				<div class="about-text w-2/3 max-w-2xl pt-8">
+				<div class="about-text w-full max-w-2xl pt-8 lg:w-2/3">
 					{% include '_partials/about-text' with {
 						text: entry.calloutText
 					} only %}
