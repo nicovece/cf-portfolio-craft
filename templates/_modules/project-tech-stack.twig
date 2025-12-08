@@ -1,18 +1,23 @@
-{# TECH STACK #}
-{% set techStackItems = entry.techStackItems.eagerly().all() %}
+{% set category = category|default(['essential', 'fullList']) %}
+{% set wrapperClasses = wrapperClasses|default('') %}
+{% set itemClasses = itemClasses|default('') %}
+{% set itemsHaveDescription = itemsHaveDescription|default(false) %}
+{% set itemsSeparator = itemsSeparator|default(',') %}
+
+{% set categoryFilter = category is iterable ? category : [category] %}
+{% set techStackItems =
+	entry.techStackItems.eagerly().all()|filter(item => item.techItemCategory.value in categoryFilter)
+%}
 {% if techStackItems|length %}
-	<section class="mt-8 bg-darker py-12 text-white lg:pt-20 lg:pb-32">
-		<div class="section-max-width">
-			<h5 class="text-fs-base mb-8">Tech Stack</h5>
-			<ul class="text-fs-medium my-4 list-disc space-y-4 pl-4">
-				{% for item in techStackItems %}
-					<li>
-						<strong class="font-medium">{{ item.techItemName }}</strong> {% if item.techItemDescription %}
-							<span>({{ item.techItemDescription }})</span>
-						{% endif %}
-					</li>
-				{% endfor %}
-			</ul>
-		</div>
-	</section>
+	<ul class="{{ wrapperClasses }}">
+		{% for item in techStackItems %}
+			<li class="{{ itemClasses }}">
+				<strong class="font-medium">{{ item.techItemName }}</strong>{% if
+					itemsHaveDescription and item.techItemDescription %}
+					<span>({{ item.techItemDescription }})</span>
+				{% endif -%}
+				{% if not loop.last and itemsSeparator %}{{ itemsSeparator }}{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
 {% endif %}

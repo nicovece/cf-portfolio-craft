@@ -9,14 +9,11 @@
 			</a>
 		</h1>
 
-		{% set essentialTech = entry.techStackItems.all()|filter(tech => tech.techItemCategory.value == 'essential') %}
-		{% if essentialTech|length %}
-			<ul class="font-fs-small mt-4 flex flex-wrap gap-1 text-gray-600">
-				{% for tech in essentialTech %}
-					<li>{{ tech.techItemName }}{% if not loop.last %},{% endif %}</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
+		{% include '_modules/project-tech-stack' with {
+			entry: entry,
+			category: 'essential',
+			wrapperClasses: 'font-fs-small mt-4 flex flex-wrap gap-1 text-gray-500'
+		} only %}
 		{% if entry.description %}
 			<div class="text-fs-medium order-2 mt-4 mb-12 max-w-2xl leading-relaxed 2xl:max-w-3xl 3xl:max-w-4xl">
 				{{ entry.description }}
@@ -27,7 +24,9 @@
 		<div
 			class="flex-- flex-col-- grid grid-cols-[1fr_1fr] gap-8 p-8 text-white max-sm:mx-auto md:gap-12 md:p-12 lg:grid lg:w-[90%] lg:grid-cols-[5fr_3fr_1fr] lg:gap-16 lg:p-16"
 		>
-			{% set galleryItems = entry.gallery.all()|filter(item => item.cssClasses and 'cover' in item.cssClasses) %}
+			{% set galleryItems =
+				entry.gallery.eagerly().all()|filter(item => item.cssClasses and 'cover' in item.cssClasses)
+			%}
 			{% if galleryItems|length %}
 				{% for item in galleryItems %}
 					{% set image = item.image.one() %}
