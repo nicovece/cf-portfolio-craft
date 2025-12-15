@@ -3,7 +3,7 @@
 		<h5 class="text-fs-base font-medium text-accent">Tschüssi!</h5>
 
 		{# Social Links from Global Set #}
-		{% set globalSocial = craft.globalSets().handle('socialLinksSettings').with(['socialLinks']).one() %}
+		{% set globalSocial = craft.globalSets().handle('socialLinksSettings').one() %}
 		{% if globalSocial.socialLinks|length %}
 			<ul class="flex items-center gap-4">
 				{% for link in globalSocial.socialLinks %}
