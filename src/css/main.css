@@ -117,7 +117,7 @@
 			width: min(84%, 1280px);
 		}
 	}
-	@media (min-width: var(--breakpoint-3xl)) {
+	@media (min-width: 1680px) {
 		.section-max-width {
 			width: min(80%, 1600px);
 		}
@@ -142,7 +142,7 @@
 	}
 
 	/* Custom 3xl breakpoint for intro text */
-	@media (min-width: var(--breakpoint-3xl)) {
+	@media (min-width: 1680px) {
 		.intro-text {
 			line-height: 3rem;
 		}

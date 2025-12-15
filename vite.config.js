@@ -4,10 +4,11 @@ const host = process.env.DDEV_HOSTNAME;
 
 export default ({ command }) => ({
   base: command === "serve" ? "" : "/static/dist/",
-  publicDir: "web",
+  publicDir: false, // Disable to prevent copying web/ into web/static/dist/
   build: {
     manifest: "manifest.json",
     outDir: "web/static/dist/",
+    emptyOutDir: true, // Clean output directory on build
     rollupOptions: {
       input: {
         app: "src/js/main.ts",
