@@ -1,0 +1,17 @@
+{% extends '_layouts/base.twig' %}
+
+{% block title %}
+	Page Not Found - {{ siteName }}
+{% endblock %}
+
+{% block content %}
+	<section class="">
+		<div class="section-intro section-max-width">
+			<h1 class="mb-4 text-4xl font-light text-accent-dark">Page Not Found</h1>
+			<p class="mb-8 text-lg">
+				The page you're looking for doesn't exist or has been moved.
+			</p>
+			<a href="{{ url('/') }}" class="link-inline w-fit text-xl">Return to homepage</a>
+		</div>
+	</section>
+{% endblock %}

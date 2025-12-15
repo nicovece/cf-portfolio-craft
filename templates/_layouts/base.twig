@@ -3,19 +3,51 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="view-transition" content="same-origin" />
 		<title>
 			{% block title %}
 				{{ siteName }}
 			{% endblock %}
 		</title>
+		{% block seo %}
+			<meta
+				name="description"
+				content="Portfolio of Nicola Vece, full-stack web developer in Berlin specializing in Craft CMS, React, Angular, Django, and Node.js. Building modern, responsive web applications."
+			/>
+			<meta
+				name="keywords"
+				content="full-stack developer, Berlin, React, Angular, Django, Node.js, TypeScript, web developer portfolio"
+			/>
+			<meta name="author" content="Nicola Vece" />
+			<meta property="og:title" content="{{ entry.title ?? siteName }}" />
+			<meta
+				property="og:description"
+				content="Full-stack web developer portfolio - React, Angular, Django, Node.js projects"
+			/>
+			<meta property="og:type" content="website" />
+			<meta property="og:url" content="{{ craft.app.request.absoluteUrl }}" />
+			<meta property="og:site_name" content="{{ siteName }}" />
+			{# <meta property="og:image" content="{{ siteUrl }}/images/og-image.jpg" /> #}
+		{% endblock %}
 
 		{{ craft.vite.script('src/js/main.ts', false) }}
 		{% set pageClass = 'page-' ~ entry.section.handle ?? 'home' %}
 		{{ head() }}
 	</head>
-	<body class="flex min-h-screen flex-col selection:bg-accent selection:text-white {{ pageClass }}">
+	<body
+		class="flex min-h-screen flex-col selection:bg-accent selection:text-white page-{{
+		entry.section.handle
+			?? 'home'
+		}}"
+	>
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
+		>
+			Skip to main content
+		</a>
 		{% include '_modules/site-nav' %}
-		<main class="flex-1">
+		<main class="flex-1" id="main-content">
 			{% block content %}
 
 			{% endblock %}
