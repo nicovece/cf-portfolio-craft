@@ -1,6 +1,6 @@
 # Portfolio - Craft CMS
 
-Personal portfolio site built with Craft CMS 5.
+Modern portfolio website built with Craft CMS 5 and Tailwind CSS.
 
 **Live Site:** https://www.nicovece.dev
 
