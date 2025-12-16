@@ -14,6 +14,34 @@ Modern portfolio website built with Craft CMS 5 and Tailwind CSS.
 - TypeScript
 - **Hosting:** Fortrabbit (Universal Stack, Ireland)
 
+## Content Architecture
+
+### Content Modeling
+- **Projects Section**: Flexible content builder using Matrix field with three block types:
+  - `textSection` - Rich text with collapsible sections
+  - `imageSection` - Images with captions and modal support
+  - `overview` - Project context and role description
+- **Tech Stack**: Nested Matrix entries with category filtering (essential vs full list)
+- **Gallery**: Matrix-based image gallery with modal lightbox support
+
+### Query Optimization
+- **Eager Loading**: `.eagerly()` on Matrix fields to prevent N+1 queries
+- **Scoped Queries**: `.with()` for related assets
+
+### Template Organization
+```
+templates/
+  _layouts/       # Base page layouts
+  _modules/       # Complete, self-contained sections (nav, footer, gallery)
+  _partials/      # Reusable components and Matrix block renderers
+  _macros.twig    # DRY link styling utilities
+```
+
+### Image Strategy
+- 5 responsive transforms: 400, 800, 1200, 1600, 2400px
+- WebP format with quality optimization
+- `srcset` implementation for art direction
+
 ## Local Development
 
 ```bash
@@ -79,10 +107,6 @@ ssh en-k9fwp1@ssh.eu-w1a.frbit.app \
 
 **Note:** Database sync overwrites production. Prefer making content changes directly in production admin.
 
-### Documentation
-
-See `learning_docs/craft_deployment_fortrabbit.md` for complete deployment guide.
-
 ## Project Structure
 
 ```
@@ -102,6 +126,3 @@ src/
 - Retcon partials for rich text styling
 - @layer components for CSS architecture
 
-## Credits
-
-Reference implementation: [ptf-site-main](https://github.com/prototypefund/demo-week-runde14)
