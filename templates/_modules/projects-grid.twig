@@ -7,6 +7,7 @@
 {% if projects|length %}
 	<div
 		class="flex flex-col gap-24 bg-dark p-10 text-white md:p-12 lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-16 xl:p-16 2xl:gap-40 2xl:p-20 3xl:p-40"
+		data-reveal-item
 	>
 		{% for project in projects %}
 			{% include '_partials/entry/project-teaser' with {

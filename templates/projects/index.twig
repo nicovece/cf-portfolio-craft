@@ -5,14 +5,18 @@
 {% endblock %}
 
 {% block content %}
-	<section class="section-intro section-max-width">
-		<h1 class="intro-text">Here is something that distracted me from working on my portfolio</h1>
+	<section class="section-intro section-max-width" data-reveal-group="0.2">
+		<h1 class="intro-text" data-reveal-item>Here is something that distracted me from working on my portfolio</h1>
 	</section>
 	<div class="mx-auto mt-0">
 		{% set projects = craft.entries().section('projects').orderBy('postDate DESC').all() %}
 		{% if projects|length %}
 			{% for project in projects %}
-				{{ project.render() }}
+				{{
+					project.render({
+						isFirst: loop.first
+					})
+				}}
 			{% endfor %}
 		{% else %}
 			<p>

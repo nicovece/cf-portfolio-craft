@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block content %}
-	<section class="project-section-intro section-max-width" aria-labelledby="project-heading">
-		<h1 class="intro-text mb-4">
+	<section class="project-section-intro section-max-width" aria-labelledby="project-heading" data-reveal-group>
+		<h1 class="intro-text mb-4" data-reveal-item>
 			<strong class="font-medium">{{ entry.title }}</strong>
 			<span class="hidden md:inline">-</span>
 			<span class="block md:inline">{{ entry.shortDescription }}</span>
@@ -21,7 +21,7 @@
 		} only %}
 
 		{% if entry.githubUrl %}
-			<p class="mb-4">
+			<p class="mb-4" data-reveal-item>
 				<a
 					href="{{ entry.githubUrl }}"
 					class="link-inline text-fs-medium ml-0"
@@ -37,7 +37,7 @@
 		{% endif %}
 
 		{% if entry.projectUrl %}
-			<p>
+			<p data-reveal-item>
 				<a
 					href="{{ entry.projectUrl }}"
 					class="link-inline text-fs-medium ml-0"
@@ -52,7 +52,7 @@
 			</p>
 		{% endif %}
 	</section>
-	<article class="mt-24 text-lg/7 md:mt-32">
+	<article class="mt-24 text-lg/7 md:mt-32" data-reveal-group="0.2">
 		{% set contentSections = entry.contentSections.eagerly().all() %}
 
 		{% if contentSections|length %}
