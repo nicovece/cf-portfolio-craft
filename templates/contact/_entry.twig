@@ -6,9 +6,11 @@
 
 {% block content %}
 	{# Intro Section #}
-	<section class="section-intro section-max-width">
-		{% include '_partials/intro-text' with {
-			text: entry.introText
-		} only %}
+	<section class="section-intro section-max-width" data-reveal-group>
+		<div data-reveal-item>
+			{% include '_partials/intro-text' with {
+				text: entry.introText
+			} only %}
+		</div>
 	</section>
 {% endblock %}

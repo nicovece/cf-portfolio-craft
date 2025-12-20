@@ -9,7 +9,7 @@
 	entry.techStackItems.eagerly().all()|filter(item => item.techItemCategory.value in categoryFilter)
 %}
 {% if techStackItems|length %}
-	<ul class="{{ wrapperClasses }}">
+	<ul class="{{ wrapperClasses }}" data-reveal-item>
 		{% for item in techStackItems %}
 			<li class="{{ itemClasses }}">
 				<strong class="font-medium">{{ item.techItemName }}</strong>{% if

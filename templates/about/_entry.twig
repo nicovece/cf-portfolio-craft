@@ -6,39 +6,48 @@
 {% endblock %}
 
 {% block content %}
-	<section class="about-hero section-intro section-max-width xl:pr-[20%]" aria-labelledby="about-heading">
+	<section
+		class="about-hero section-intro section-max-width mb-8 xl:pr-[30%]"
+		aria-labelledby="about-heading"
+		data-reveal-group
+	>
 		{# Intro Text: Contains H1 (name) and H2 (tagline) from CMS #}
-		<div class="about-intro">
+		<div class="about-intro" data-reveal-item>
 			{% include '_partials/intro-text' with {
 				text: entry.introText
 			} only %}
+			{% include '_partials/intro-text' with {
+				text: entry.tldrText
+			} only %}
 		</div>
 	</section>
-	
-	<div class="bg-darker pt-24 pb-32">
-		<section class="about-box section-max-width text-fs-small flex flex-col gap-6 text-white lg:flex-row lg:gap-16">
-			{% set profileImage = entry.profileImage.one() %}
-			{% if profileImage %}
-				<div class="about-image-container w-full md:w-1/3">
-					<figure class="about-image">
-						<img
-							src="{{ profileImage.getUrl('w800') }}"
-							srcset="{{ macros.srcSet(profileImage) }}"
-							sizes="(min-width: 1024px) 25vw, 50vw"
-							alt="{{ entry.title }}"
-							class="rounded-full object-cover"
-							loading="eager"
-						/>
-					</figure>
-				</div>
-			{% endif %}
-			{% if entry.body %}
-				<div class="about-text w-full max-w-2xl pt-8 lg:w-2/3">
-					{% include '_partials/about-text' with {
-						text: entry.body
-					} only %}
-				</div>
-			{% endif %}
-		</article>
+
+	<div data-reveal-group="0.2">
+		<div class="bg-darker pt-24 pb-32" data-reveal-item>
+			<section class="about-box section-max-width text-fs-small flex flex-col gap-6 text-white lg:flex-row lg:gap-16">
+				{% set profileImage = entry.profileImage.one() %}
+				{% if profileImage %}
+					<div class="about-image-container w-full md:w-1/3" data-reveal-item>
+						<figure class="about-image">
+							<img
+								src="{{ profileImage.getUrl('w800') }}"
+								srcset="{{ macros.srcSet(profileImage) }}"
+								sizes="(min-width: 1024px) 25vw, 50vw"
+								alt="{{ entry.title }}"
+								class="rounded-full object-cover"
+								loading="eager"
+							/>
+						</figure>
+					</div>
+				{% endif %}
+				{% if entry.body %}
+					<div class="about-text w-full max-w-2xl pt-8 lg:w-2/3" data-reveal-item>
+						{% include '_partials/about-text' with {
+							text: entry.body
+						} only %}
+					</div>
+				{% endif %}
+			</section>
+		</div>
 	</div>
 {% endblock %}

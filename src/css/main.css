@@ -79,6 +79,10 @@
 	}
 }
 
+@view-transition {
+	navigation: auto;
+}
+
 @layer base {
 	body {
 		@apply min-h-screen bg-white text-black antialiased;
@@ -87,6 +91,13 @@
 	*:focus-visible {
 		@apply ring-2 ring-accent ring-offset-2 outline-none;
 	}
+}
+
+/* Note: FOUC may occur in dev mode (Vite CSS injection)
+Production with Blitz caching eliminates this */
+
+.js-loaded [data-reveal-item] {
+	opacity: 0;
 }
 
 @layer components {
