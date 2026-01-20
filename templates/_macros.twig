@@ -35,7 +35,7 @@
       {% for width in [400, 800, 1200, 1600, 2400] %}
         {% set height = (width * ratioHeight / ratioWidth)|round %}
         {% set srcsetParts = srcsetParts|merge([
-          image.getUrl({ width: width, height: height, mode: 'crop' }) ~ ' ' ~ width ~ 'w'
+          image.getUrl({ width: width, height: height, mode: 'crop', format: 'webp' }) ~ ' ' ~ width ~ 'w'
         ]) %}
       {% endfor %}
       {{ srcsetParts|join(', ') }}
