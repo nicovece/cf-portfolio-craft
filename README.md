@@ -55,8 +55,8 @@ npm install
 # Run Craft setup (first time only)
 ddev craft setup
 
-# Start Vite dev server
-npm run dev
+# Start Vite dev server (inside DDEV)
+ddev npm run dev
 ```
 
 Site available at: https://cf-portfolio-craft.ddev.site
@@ -64,7 +64,7 @@ Site available at: https://cf-portfolio-craft.ddev.site
 ## Frontend Development
 
 ```bash
-npm run dev    # Development with HMR (port 3000)
+ddev npm run dev    # Development with HMR (port 3000)
 npm run build  # Production build
 ```
 

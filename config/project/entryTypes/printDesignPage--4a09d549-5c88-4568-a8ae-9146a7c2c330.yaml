@@ -1,0 +1,57 @@
+color: null
+description: null
+fieldLayouts:
+  292dc37f-6f41-4b89-81c9-f2660be6682e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-01-20T17:35:05+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3ec10970-9304-4c14-8c1b-18726aa141b9 # Intro Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b69392c7-e027-4d74-9927-6fb5c710def7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T17:35:05+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b195d976-d372-4bd7-999b-0766b1e4d76b # Print Projects
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 60ee307b-83bf-4850-9a37-e1bfe65ce3dc
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: aeff9a70-3898-4eaa-b024-7c77f06d9994
+        userCondition: null
+handle: printDesignPage
+hasTitleField: false
+icon: null
+name: 'Print Design Page'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

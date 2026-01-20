@@ -1,0 +1,125 @@
+color: null
+description: null
+fieldLayouts:
+  683422a8-fd54-4ad4-9acd-7027d220b458:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-01-20T17:37:21+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ee2824c3-8d7f-418a-b418-244c0e84e62f # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 26546bca-ce31-4243-a7d4-2f6d83810a1f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T19:51:49+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 331539bf-f337-402c-b9cc-24ad01f1d9de # Short Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: be168f0f-3b37-4180-a21c-4f5551ab2ce3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T17:37:21+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d41bdc89-fe25-44f0-8d25-055ea6bbf491 # Hero Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b58f1d52-dbc8-45fc-9d1e-8491074ab3fb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T17:37:21+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5a2e10e5-d101-4b1e-8f49-e396385ff908 # Project URL
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 21f10bb0-9faf-4b54-b374-8ee68d95d471
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T17:37:21+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f98763e1-1773-4a0b-87bc-8ddd1b7f7dd7 # Year
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dfd44130-c301-4cfe-913d-1bd78dab7073
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T17:37:21+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ecb2f628-ba96-4263-bff5-f5ded5a5ad48 # Design Sections
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7d1bdf44-4934-4bda-9295-50931998080a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9e6c9477-d56b-4320-9507-aa69c95e7019
+        userCondition: null
+handle: digitalProject
+hasTitleField: false
+icon: null
+name: 'Digital Project'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

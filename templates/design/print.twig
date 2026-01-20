@@ -1,0 +1,109 @@
+{% extends '_layouts/base.twig' %}
+{% import '_macros' as macros %}
+
+{% block title %}
+	Print Design - {{ siteName }}
+{% endblock %}
+
+{% block content %}
+	<section class="section-intro section-max-width" data-reveal-group="0.2">
+		<h1 class="intro-text" data-reveal-item>Print Design</h1>
+		{% if entry.introText %}
+			<div class="mt-4" data-reveal-item>
+				{{ entry.introText }}
+			</div>
+		{% endif %}
+	</section>
+
+	{# Loop through print projects #}
+	{% set projects = entry.printProjects.all() %}
+	{% if projects|length %}
+		<div class="mt-16 space-y-24">
+			{% for project in projects %}
+				<article class="print-project" data-reveal-group="0.2">
+					<header class="section-max-width mb-8">
+						<h2 class="text-fs-lg" data-reveal-item>{{ project.projectTitle }}</h2>
+						{% if project.shortDescription %}
+							<p class="mt-2 text-gray-400" data-reveal-item>{{ project.shortDescription }}</p>
+						{% endif %}
+					</header>
+
+					{# Reuse existing gallery module pattern #}
+					{% set galleryItems = project.gallery.all() %}
+					{% if galleryItems|length %}
+						<section class="grid grid-cols-2 gap-8 bg-dark p-8 text-white md:gap-12 md:p-12 lg:grid-cols-4 lg:gap-16 lg:p-16">
+							{% for item in galleryItems %}
+								{% set image = item.image.one() %}
+								{% if image %}
+									<figure class="project-gallery-item {{ item.cssClasses ?? '' }}">
+										{% if item.hasModal %}
+											{% set modalImg = item.modalImage.one() ?? image %}
+											{% set modalCap = item.modalCaption ?? item.caption %}
+											<button
+												type="button"
+												class="gallery__trigger flex w-full cursor-pointer items-start border-0 bg-transparent p-0"
+												data-modal-image="{{ modalImg.getUrl('w2400') }}"
+												data-modal-alt="{{ item.altText }}"
+												data-modal-caption="{{ (modalCap ?? item.altText)|e('html_attr') }}"
+												data-modal-entry-title="{{ project.projectTitle }}"
+												aria-label="Open larger view of {{ item.altText }}"
+											>
+												<img
+													src="{{ image.getUrl('w1200') }}"
+													srcset="{{ macros.srcSet(image) }}"
+													sizes="(min-width: 1024px) 25vw, 50vw"
+													alt="{{ item.altText }}"
+													loading="lazy"
+												/>
+											</button>
+										{% else %}
+											<img
+												src="{{ image.getUrl('w1200') }}"
+												srcset="{{ macros.srcSet(image) }}"
+												sizes="(min-width: 1024px) 25vw, 50vw"
+												alt="{{ item.altText }}"
+												loading="lazy"
+											/>
+										{% endif %}
+										{% if item.caption %}
+											<figcaption class="mt-2 text-sm text-gray-500">
+												{{ item.caption }}
+											</figcaption>
+										{% endif %}
+									</figure>
+								{% endif %}
+							{% endfor %}
+						</section>
+					{% endif %}
+				</article>
+			{% endfor %}
+		</div>
+	{% else %}
+		<p class="section-max-width mt-8">No print projects yet.</p>
+	{% endif %}
+
+	{# Modal markup for gallery #}
+	<dialog
+		id="gallery-modal"
+		class="gallery__modal fixed inset-0 z-50 m-0 h-full max-h-full w-full max-w-full border-0 bg-transparent p-0 backdrop:bg-darker/85 backdrop:backdrop-blur-sm"
+	>
+		<div
+			class="gallery__modal__content pointer-events-none flex w-full flex-col items-center justify-center pb-24 *:pointer-events-auto"
+		>
+			<button
+				type="button"
+				class="gallery__modal__close link-inline fixed top-0 right-4 z-10 min-h-8 min-w-8 cursor-pointer text-white hover:text-accent max-sm:border-none md:top-6 md:right-6"
+				aria-label="Close modal"
+			>
+				✕ <span class="sr-only md:not-sr-only">Close</span>
+			</button>
+			<p
+				id="gallery-modal-caption"
+				class="gallery__modal__caption sticky top-0 mb-24 block w-full bg-darker/85 py-8 text-center text-white backdrop-blur-sm"
+			></p>
+			<figure class="w-8/10 xl:w-1/2">
+				<img id="gallery-modal-image" src="" srcset="" sizes="60vw" alt="" class="w-full" loading="eager" />
+			</figure>
+		</div>
+	</dialog>
+{% endblock %}

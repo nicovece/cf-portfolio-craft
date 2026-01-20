@@ -1,0 +1,91 @@
+color: null
+description: null
+fieldLayouts:
+  7071476e-5e43-4a5d-9ff3-398078d547ba:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-01-20T17:12:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 2f0c93dc-0f35-42c2-b011-4bc28d670b37 # Project Title
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fa0e3693-e543-4df9-b6ee-80c7d315c0af
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T19:51:09+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 331539bf-f337-402c-b9cc-24ad01f1d9de # Short Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7387004d-2f8f-4294-9771-59dce4a20aa8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T17:12:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ee2824c3-8d7f-418a-b418-244c0e84e62f # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 13b7c6e2-5df9-4018-91c7-44349605b717
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T17:12:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: cdba1535-dc8b-460e-b34a-2c489560a09d # Gallery
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b7b1e176-af7a-4fa2-a084-359ed3aec5d5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b45c33e6-b549-49d2-ae52-76625d2eca1f
+        userCondition: null
+handle: printProject
+hasTitleField: false
+icon: null
+name: 'Print Project'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

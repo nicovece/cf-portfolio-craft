@@ -1,0 +1,60 @@
+{% extends '_layouts/base.twig' %}
+{% import '_macros' as macros %}
+
+{% block title %}
+	Digital Design - {{ siteName }}
+{% endblock %}
+
+{% block content %}
+	<section class="section-intro section-max-width" data-reveal-group="0.2">
+		<h1 class="intro-text" data-reveal-item>Digital Design</h1>
+	</section>
+
+	{% set projects = craft.entries().section('designDigital').orderBy('postDate DESC').all() %}
+	{% if projects|length %}
+		<div class="mt-16 space-y-16 section-max-width">
+			{% for project in projects %}
+				<article class="digital-project-teaser flex flex-col gap-6" data-reveal-item>
+					<h3 class="text-fs-base">
+						<a href="{{ project.url }}" class="inline-block border-b border-accent/50 hover:border-accent lg:leading-8">
+							<strong>{{ project.title }}</strong>
+						</a>
+						{% if project.year %}
+							<span class="text-gray-400">({{ project.year }})</span>
+						{% endif %}
+						{% if project.shortDescription %}
+							<span class="hidden lg:inline">-</span>
+							<span class="block lg:inline">{{ project.shortDescription }}</span>
+						{% endif %}
+					</h3>
+
+					{% if project.description %}
+						<div class="text-fs-small leading-relaxed">
+							{{ project.description }}
+						</div>
+					{% endif %}
+
+					{% set image = project.heroImage.one() %}
+					{% if image %}
+						<img
+							src="{{ image.getUrl({ width: 1200, height: 800, mode: 'crop' }) }}"
+							srcset="{{ macros.srcSet(image, true, '3:2') }}"
+							sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+							width="1200"
+							height="800"
+							alt="{{ image.alt ?? image.title }}"
+							class="my-2 h-auto w-full md:w-1/2 lg:w-2/3"
+							loading="lazy"
+						/>
+					{% endif %}
+
+					<a href="{{ project.url }}" class="link-inline text-fs-small m-0 border-accent/50 hover:border-accent">
+						View Project
+					</a>
+				</article>
+			{% endfor %}
+		</div>
+	{% else %}
+		<p class="section-max-width mt-8">No digital projects yet.</p>
+	{% endif %}
+{% endblock %}
