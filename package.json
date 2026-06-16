@@ -8,10 +8,17 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "craft-cms",
+    "portfolio",
+    "twig",
+    "tailwindcss",
+    "vite",
+    "typescript"
+  ],
+  "author": "Nicola Vece",
+  "license": "UNLICENSED",
+  "description": "Personal developer portfolio built with Craft CMS 5, Vite, Tailwind CSS 4, and TypeScript.",
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.17",
     "@zackad/prettier-plugin-twig": "^0.16.0",
