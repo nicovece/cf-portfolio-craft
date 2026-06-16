@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: year
+instructions: 'Project year or range (e.g., "2018" or "2014-2015")'
+name: Year
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: 9
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

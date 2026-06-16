@@ -55,8 +55,8 @@ npm install
 # Run Craft setup (first time only)
 ddev craft setup
 
-# Start Vite dev server
-npm run dev
+# Start Vite dev server (inside DDEV)
+ddev npm run dev
 ```
 
 Site available at: https://cf-portfolio-craft.ddev.site
@@ -64,13 +64,13 @@ Site available at: https://cf-portfolio-craft.ddev.site
 ## Frontend Development
 
 ```bash
-npm run dev    # Development with HMR (port 3000)
+ddev npm run dev    # Development with HMR (port 3000)
 npm run build  # Production build
 ```
 
 ## Production Deployment
 
-**Platform:** Fortrabbit Universal Stack (eu-w1a region)
+**Platform:** Fortrabbit Universal Stack
 
 ### Deployment Workflow
 
@@ -87,7 +87,7 @@ git push origin production
 Images are not in git and must be synced manually:
 
 ```bash
-rsync -avz web/uploads/ en-k9fwp1@ssh.eu-w1a.frbit.app:/data/www/web/uploads/
+rsync -avz web/uploads/ <user>@<ssh-host>:/data/www/web/uploads/
 ```
 
 ### Database Sync
@@ -100,9 +100,9 @@ ddev export-db > db.sql
 mv db.sql db.sql.gz && gunzip db.sql.gz
 
 # Upload and import
-scp db.sql en-k9fwp1@ssh.eu-w1a.frbit.app:/tmp/
-ssh en-k9fwp1@ssh.eu-w1a.frbit.app \
-  'mysql -h mysql -u en-k9fwp1 -p{password} en-k9fwp1 < /tmp/db.sql'
+scp db.sql <user>@<ssh-host>:/tmp/
+ssh <user>@<ssh-host> \
+  'mysql -h mysql -u <db-user> -p<password> <db-name> < /tmp/db.sql'
 ```
 
 **Note:** Database sync overwrites production. Prefer making content changes directly in production admin.

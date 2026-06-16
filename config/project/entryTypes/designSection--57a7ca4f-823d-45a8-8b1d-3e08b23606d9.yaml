@@ -1,0 +1,57 @@
+color: null
+description: null
+fieldLayouts:
+  27e26651-6fe5-4014-993b-625342d22534:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-01-20T17:14:32+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 02a69196-df6c-400e-8f4f-2c7d620a6bcb # Section Title
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1dfc2829-5023-4dc7-b3cf-d659b7c8dd84
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-20T17:14:32+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: cdba1535-dc8b-460e-b34a-2c489560a09d # Gallery
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2c136451-92c3-4175-8cd9-3c1f06fb8d03
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 8d80af09-cea2-4a17-b499-760de3db3aae
+        userCondition: null
+handle: designSection
+hasTitleField: false
+icon: null
+name: 'Design Section'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
