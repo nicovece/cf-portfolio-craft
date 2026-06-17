@@ -61,6 +61,22 @@ ddev npm run dev
 
 Site available at: https://cf-portfolio-craft.ddev.site
 
+### Vite + DDEV routing
+This project runs Vite inside DDEV, so the router must expose port 3000:
+
+```yaml
+web_extra_exposed_ports:
+  - name: vite
+    container_port: 3000
+    http_port: 2999
+    https_port: 3000
+```
+
+After changing `.ddev/config.yaml`, run:
+```bash
+ddev restart
+```
+
 ## Frontend Development
 
 ```bash
