@@ -213,6 +213,23 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2026-06-17T16:00:23+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7caa7e76-da06-4b8e-816f-e560bf7dd143 # Project Links
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 24f50411-b3ba-45f6-949a-c87ffac5ee58
+            userCondition: null
+            warning: null
+            width: 100
         name: Meta
         uid: f64110ff-cb38-4741-b0cd-6d0f2ae38574
         userCondition: null

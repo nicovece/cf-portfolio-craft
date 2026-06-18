@@ -2,7 +2,9 @@
 {% import '_macros' as macros %}
 
 {% block title %}
-	{{ entry.title }} - {{ siteName }}
+	{{ entry.title }}
+	-
+	{{ siteName }}
 {% endblock %}
 
 {% block content %}
@@ -19,37 +21,47 @@
 			wrapperClasses: 'font-fs-small mt-4 mb-8 flex flex-wrap gap-1 text-gray-600',
 			itemsSeparator: ','
 		} only %}
-
-		{% if entry.githubUrl %}
-			<p class="mb-4" data-reveal-item>
-				<a
-					href="{{ entry.githubUrl }}"
-					class="link-inline text-fs-medium ml-0"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Github repository
-				</a>
-				{% if entry.helpTextGithubUrl %}
-					<small class="text-fs-smaller mt-2 block text-gray-600">{{ entry.helpTextGithubUrl }}</small>
-				{% endif %}
-			</p>
-		{% endif %}
-
-		{% if entry.projectUrl %}
-			<p data-reveal-item>
-				<a
-					href="{{ entry.projectUrl }}"
-					class="link-inline text-fs-medium ml-0"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Live website
-				</a>
-				{% if entry.helpText %}
-					<small class="text-fs-smaller mt-2 block text-gray-600">{{ entry.helpText }}</small>
-				{% endif %}
-			</p>
+		{% set validLinks = entry.projectLinks|filter(l => l.url and l.label) %}
+		{% if validLinks|length %}
+			{% set ungrouped = validLinks|filter(l => not l.group|trim) %}
+			{% set groupedLinks = validLinks|filter(l => l.group|trim) %}
+			{# Ungrouped → one link per row (your simple-project layout) #}
+			{% for link in ungrouped %}
+				<p class="mb-4" data-reveal-item>
+					<a href="{{ link.url }}" class="link-inline text-fs-medium ml-0" target="_blank" rel="noopener noreferrer">
+						{{ link.label }}
+					</a>
+					{% if link.helpText %}
+						<small class="text-fs-smaller mt-2 block text-gray-600">{{ link.helpText }}</small>
+					{% endif %}
+				</p>
+			{% endfor %}
+			{# Grouped → groups side by side on md, stacked on mobile #}
+			{% if groupedLinks|length %}
+				{% set grouped = groupedLinks|group(l => l.group|trim) %}
+				<div class="flex flex-col gap-8 md:flex-row lg:gap-12">
+					{% for groupName, links in grouped %}
+						<div data-reveal-item>
+							<strong class="text-fs-medium mb-4 block font-normal">{{ groupName }}:</strong>
+							{% for link in links %}
+								<p class="mb-4">
+									<a
+										href="{{ link.url }}"
+										class="link-inline text-fs-medium ml-0"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{{ link.label }}
+									</a>
+									{% if link.helpText %}
+										<small class="text-fs-smaller mt-2 block text-gray-600">{{ link.helpText }}</small>
+									{% endif %}
+								</p>
+							{% endfor %}
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
 		{% endif %}
 	</section>
 	<article class="mt-24 text-lg/7 md:mt-32" data-reveal-group="0.2">
