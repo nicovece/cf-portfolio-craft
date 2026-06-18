@@ -244,6 +244,16 @@ corepack_enable: false
 #  container_port: 3000
 #  http_port: 2999
 #  https_port: 3000
+#web_extra_exposed_ports:
+#- name: nodejs
+#  container_port: 3000
+#  http_port: 2999
+#  https_port: 3000
+web_extra_exposed_ports:
+  - name: vite
+    container_port: 3000
+    http_port: 2999
+    https_port: 3000
 #- name: something
 #  container_port: 4000
 #  https_port: 4000
