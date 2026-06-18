@@ -214,6 +214,9 @@ Production with Blitz caching eliminates this */
 	.project-section-intro {
 		@apply mx-auto pt-40 pb-6 md:pt-48;
 	}
+	.project-section-intro-flattop {
+		@apply mx-auto pt-24 pb-6 md:pt-48;
+	}
 	.project-section-title {
 		font-size: var(--font-size-fs-smaller);
 		@apply mt-8 mb-5 border-b border-current/25 pb-4;

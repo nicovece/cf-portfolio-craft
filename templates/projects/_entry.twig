@@ -8,6 +8,10 @@
 {% endblock %}
 
 {% block content %}
+	{% set validLinks = entry.projectLinks|filter(l => l.url and l.label) %}
+	{% set ungrouped = validLinks|filter(l => not l.group|trim) %}
+	{% set groupedLinks = validLinks|filter(l => l.group|trim) %}
+	{% set hasGroupedLinks = groupedLinks|length > 0 %}
 	<section class="project-section-intro section-max-width" aria-labelledby="project-heading" data-reveal-group>
 		<h1 class="intro-text mb-4" data-reveal-item>
 			<strong class="font-medium">{{ entry.title }}</strong>
@@ -21,42 +25,48 @@
 			wrapperClasses: 'font-fs-small mt-4 mb-8 flex flex-wrap gap-1 text-gray-600',
 			itemsSeparator: ','
 		} only %}
-		{% set validLinks = entry.projectLinks|filter(l => l.url and l.label) %}
 		{% if validLinks|length %}
-			{% set ungrouped = validLinks|filter(l => not l.group|trim) %}
-			{% set groupedLinks = validLinks|filter(l => l.group|trim) %}
 			{# Ungrouped → one link per row (your simple-project layout) #}
 			{% for link in ungrouped %}
 				<p class="mb-4" data-reveal-item>
 					<a href="{{ link.url }}" class="link-inline text-fs-medium ml-0" target="_blank" rel="noopener noreferrer">
 						{{ link.label }}
 					</a>
-					{% if link.helpText %}
-						<small class="text-fs-smaller mt-2 block text-gray-600">{{ link.helpText }}</small>
+					{% if link.deploymentText or link.helpText %}
+						<small class="text-fs-smaller mt-2 text-gray-600 block">
+							{% if link.deploymentText %}
+								<span class="block md:inline-">{{ link.deploymentText }}</span>
+							{% endif %}
+							{% if link.helpText %}
+								<span class="block md:inline-">{{ link.helpText }}</span>
+							{% endif %}
+						</small>
 					{% endif %}
 				</p>
 			{% endfor %}
 			{# Grouped → groups side by side on md, stacked on mobile #}
 			{% if groupedLinks|length %}
 				{% set grouped = groupedLinks|group(l => l.group|trim) %}
-				<div class="flex flex-col gap-8 md:flex-row lg:gap-12">
+				<div class="flex flex-col md:flex-row lg:flex-col gap-8 lg:gap-4">
 					{% for groupName, links in grouped %}
-						<div data-reveal-item>
-							<strong class="text-fs-medium mb-4 block font-normal">{{ groupName }}:</strong>
+						<div class="flex flex-col gap-2 md:gap-4 lg:flex-row lg:items-center" data-reveal-item>
+							<strong class="text-fs-medium block font-normal">{{ groupName }}:</strong>
 							{% for link in links %}
-								<p class="mb-4">
-									<a
-										href="{{ link.url }}"
-										class="link-inline text-fs-medium ml-0"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{{ link.label }}
-									</a>
-									{% if link.helpText %}
-										<small class="text-fs-smaller mt-2 block text-gray-600">{{ link.helpText }}</small>
-									{% endif %}
-								</p>
+								{# <p class="mb-4"> #}
+								<a href="{{ link.url }}" class="link-inline text-fs-medium ml-0 m-0" target="_blank" rel="noopener noreferrer">
+									{{ link.label }}
+								</a>
+								{% if link.deploymentText or link.helpText %}
+									<small class="text-fs-smaller text-gray-600 block md-inline">
+										{% if link.deploymentText %}
+											<span class="block lg:inline">{{ link.deploymentText }}</span>
+										{% endif %}
+										{% if link.helpText %}
+											<span class="block lg:inline">{{ link.helpText }}</span>
+										{% endif %}
+									</small>
+								{% endif %}
+								{# </p> #}
 							{% endfor %}
 						</div>
 					{% endfor %}
@@ -64,26 +74,26 @@
 			{% endif %}
 		{% endif %}
 	</section>
-	<article class="mt-24 text-lg/7 md:mt-32" data-reveal-group="0.2">
+	<article class="{{ hasGroupedLinks ? 'mt-12' : 'mt-24' }} text-lg/7 md:mt-32" data-reveal-group="0.2">
 		{% set contentSections = entry.contentSections.eagerly().all() %}
 
 		{% if contentSections|length %}
 			{% for section in contentSections %}
 				{# Check what TYPE of block this is #}
 				{% switch section.type %}
-				{% case 'overview' %}
-				{% include '_partials/project-content-blocks/project-overview' with {
+					{% case 'overview' %}
+						{% include '_partials/project-content-blocks/project-overview' with {
 					section: section,
 					entry: entry
 				} only %}
 
-				{% case 'textSection' %}
-				{% include '_partials/project-content-blocks/project-text-section' with {
+					{% case 'textSection' %}
+						{% include '_partials/project-content-blocks/project-text-section' with {
 					section: section
 				} only %}
 
-				{% case 'imageSection' %}
-				{% include '_partials/project-content-blocks/project-image-section' with {
+					{% case 'imageSection' %}
+						{% include '_partials/project-content-blocks/project-image-section' with {
 					section: section
 				} only %}
 				{% endswitch %}
