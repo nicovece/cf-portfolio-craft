@@ -56,6 +56,22 @@ settings:
               - type
               - url
       -
+        - col5
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Deployment Text'
+            -
+              - handle
+              - deploymentText
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
         - col4
         -
           __assoc__:
@@ -85,6 +101,9 @@ settings:
           - ''
         -
           - col4
+          - ''
+        -
+          - col5
           - ''
   maxRows: null
   minRows: null
