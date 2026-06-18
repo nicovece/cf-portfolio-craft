@@ -11,26 +11,32 @@ function initScrollReveal() {
 
 		if (items.length === 0) return
 		const groupDelay = parseFloat((group as HTMLElement).dataset.revealGroup || "0")
+		const fromVars = {
+			opacity: 0,
+			y: (index, target) => parseFloat((target as HTMLElement).dataset.revealItemY || "30")
+		}
+		const toVars = {
+			opacity: 1,
+			y: 0,
+			duration: 0.6,
+			delay: groupDelay,
+			stagger: 0.1,
+			ease: "power2.out"
+		}
+		const inViewOnLoad = ScrollTrigger.isInViewport(group)
 
-		gsap.fromTo(
-			items,
-			{
-				opacity: 0,
-				y: (index, target) => parseFloat((target as HTMLElement).dataset.revealItemY || "30")
-			},
-			{
-				opacity: 1,
-				y: 0,
-				duration: 0.6,
-				delay: groupDelay,
-				stagger: 0.1,
-				ease: "power2.out",
-				scrollTrigger: {
-					trigger: group,
-					start: "top 75%"
-				}
+		if (inViewOnLoad) {
+			gsap.fromTo(items, fromVars, toVars)
+			return
+		}
+
+		gsap.fromTo(items, fromVars, {
+			...toVars,
+			scrollTrigger: {
+				trigger: group,
+				start: "top 75%"
 			}
-		)
+		})
 	})
 }
 
