@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: projectIsMultistack
+instructions: null
+name: 'Multi-stack Project'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Single-stack project entry'
+  onLabel: 'Multi-stack project entry'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

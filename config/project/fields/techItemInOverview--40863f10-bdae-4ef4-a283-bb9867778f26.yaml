@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: techItemInOverview
+instructions: null
+name: 'Tech Item in overview'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Item IS NOT in overview block'
+  onLabel: 'Item IS in overview block'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

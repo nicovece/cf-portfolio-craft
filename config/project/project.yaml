@@ -1,4 +1,4 @@
-dateModified: 1781800585
+dateModified: 1781868161
 email:
   fromEmail: me@nicovece.com
   fromName: "Nico's portfolio"
@@ -28,6 +28,7 @@ meta:
     3d64e561-8a19-44d2-93bc-c83b592eeb06: Contact # Contact
     3ec10970-9304-4c14-8c1b-18726aa141b9: 'Intro Text' # Intro Text
     4a09d549-5c88-4568-a8ae-9146a7c2c330: 'Print Design Page' # Print Design Page
+    4af01e02-8b61-4ba9-94b8-ea5308c4fe25: 'Tech Item Stack' # Tech Item Stack
     4b88eb37-66fa-4ec1-bc90-0a62ee00369c: 'Social Links' # Social Links
     4b405d36-d472-4146-811f-455fc1bbe9b3: 'Resume file' # Resume file
     4c4f49ff-75d7-4c45-8a5b-464e45dd4a46: w1600 # w1600
@@ -54,6 +55,7 @@ meta:
     7589e2aa-2284-4e7e-92fc-e281a137f1c7: 'Text Section' # Text Section
     8978d6bb-6ded-4fd6-9233-ba23d526f6cd: w1200 # w1200
     31655d94-fba9-489d-8b4a-755a1be0aeed: 'Tech Stack' # Tech Stack
+    40863f10-bdae-4ef4-a283-bb9867778f26: 'Tech Item in overview' # Tech Item in overview
     85597cc0-9094-44d7-b720-fcdf26fb9f08: 'CSS Classes' # CSS Classes
     331539bf-f337-402c-b9cc-24ad01f1d9de: 'Short Description' # Short Description
     953298f3-93bd-427c-885b-63aafc94d31b: Image # Image
@@ -68,6 +70,7 @@ meta:
     aea4427c-b3ff-4fae-bc8b-1617b11becac: 'Digital Project' # Digital Project
     b7ba979d-16bd-4395-9aad-196ce5bb038d: Hompage # Hompage
     b195d976-d372-4bd7-999b-0766b1e4d76b: 'Print Projects' # Print Projects
+    b7960e3b-b924-45ba-a804-40cad2cc01e5: 'Multi-stack Project' # Multi-stack Project
     be37f4aa-639d-4cd2-b5ce-80acd5061e78: 'Tech Item' # Tech Item
     c2a731eb-14da-4641-a0b9-b2eb89a0d34e: Impressum # Impressum
     c67aace5-253d-4af7-a1f1-955fcf30240e: 'Help text' # Help text
