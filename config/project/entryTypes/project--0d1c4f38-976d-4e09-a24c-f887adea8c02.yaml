@@ -237,6 +237,23 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2026-06-19T08:19:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b7960e3b-b924-45ba-a804-40cad2cc01e5 # Multi-stack Project
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc271733-a801-441d-8e8f-5e86785a2334
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-11-29T08:10:54+00:00'
             editCondition: null
             elementCondition: null

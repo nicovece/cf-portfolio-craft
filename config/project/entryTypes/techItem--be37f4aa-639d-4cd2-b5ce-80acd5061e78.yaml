@@ -42,6 +42,23 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2026-06-19T10:23:41+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 40863f10-bdae-4ef4-a283-bb9867778f26 # Tech Item in overview
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f51d539d-fa21-4d97-8dd6-e6a1fa2a12b9
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-11-29T08:09:23+00:00'
             editCondition: null
             elementCondition: null
@@ -58,6 +75,23 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2026-06-19T07:47:22+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4af01e02-8b61-4ba9-94b8-ea5308c4fe25 # Tech Item Stack
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 94ef21d8-b1e7-4dc7-8e26-91033f1af489
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: bca28692-d70c-4a27-80e5-e49b93c28ebf
         userCondition: null
@@ -69,6 +103,6 @@ showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{techItemName} - {techItemCategory}'
+titleFormat: '{techItemName} - {techItemCategory} - overview: {techItemInOverview} - {techItemStack}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
