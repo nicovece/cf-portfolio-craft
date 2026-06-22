@@ -5,6 +5,7 @@ entryTypes:
     uid: aea4427c-b3ff-4fae-bc8b-1617b11becac # Digital Project
 handle: digitalDesign
 maxAuthors: 1
+minAuthors: 1
 name: 'Digital Design'
 previewTargets:
   -

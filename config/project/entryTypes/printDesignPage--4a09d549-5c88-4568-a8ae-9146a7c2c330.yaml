@@ -13,10 +13,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 3ec10970-9304-4c14-8c1b-18726aa141b9 # Intro Text
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -30,10 +28,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b195d976-d372-4bd7-999b-0766b1e4d76b # Print Projects
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

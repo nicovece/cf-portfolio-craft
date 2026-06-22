@@ -16,7 +16,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -25,7 +24,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -43,10 +41,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 331539bf-f337-402c-b9cc-24ad01f1d9de # Short Description
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -60,10 +56,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ee2824c3-8d7f-418a-b418-244c0e84e62f # Description
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -77,10 +71,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d41bdc89-fe25-44f0-8d25-055ea6bbf491 # Hero Image
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -94,10 +86,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bbac927c-8f02-4c01-b787-5b93491ae2ed
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -111,10 +101,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 0cde3055-d952-46c0-8db8-6cb374162773 # Content Sections
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -134,10 +122,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 05d7ebc9-41b0-46e0-a54f-179adea38497 # GitHub URL
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -151,10 +137,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: c67aace5-253d-4af7-a1f1-955fcf30240e # Help text
             handle: helpTextGithubUrl
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -168,10 +152,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5a2e10e5-d101-4b1e-8f49-e396385ff908 # Project URL
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -185,10 +167,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: c67aace5-253d-4af7-a1f1-955fcf30240e # Help text
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -202,10 +182,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 54ec80f0-65f7-4d05-a156-a18331c71227 # Publish Date
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -219,10 +197,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 7caa7e76-da06-4b8e-816f-e560bf7dd143 # Project Links
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -242,10 +218,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b7960e3b-b924-45ba-a804-40cad2cc01e5 # Multi-stack Project
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -259,10 +233,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ab648d29-9a8e-42ce-8ce1-ea2b834f869a # Tech Stack Items
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -282,10 +254,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: cdba1535-dc8b-460e-b34a-2c489560a09d # Gallery
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

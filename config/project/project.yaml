@@ -1,4 +1,4 @@
-dateModified: 1781868161
+dateModified: 1782121512
 email:
   fromEmail: me@nicovece.com
   fromName: "Nico's portfolio"
@@ -107,7 +107,7 @@ system:
   edition: solo
   live: true
   name: "Nico's portfolio"
-  schemaVersion: 5.8.0.3
+  schemaVersion: 5.10.0.0
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
