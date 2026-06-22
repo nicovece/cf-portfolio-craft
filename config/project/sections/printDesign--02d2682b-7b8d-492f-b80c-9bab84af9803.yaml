@@ -5,6 +5,7 @@ entryTypes:
     uid: 4a09d549-5c88-4568-a8ae-9146a7c2c330 # Print Design Page
 handle: printDesign
 maxAuthors: 1
+minAuthors: 1
 name: 'Print Design'
 previewTargets:
   -

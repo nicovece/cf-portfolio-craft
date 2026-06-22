@@ -13,10 +13,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 02a69196-df6c-400e-8f4f-2c7d620a6bcb # Section Title
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -30,10 +28,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5a2c57a5-2e47-4f21-88f6-e98df39a1b3a # Is Subsection
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -47,10 +43,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 3ec10970-9304-4c14-8c1b-18726aa141b9 # Intro Text
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -64,10 +58,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d279a878-3e10-41ab-a412-dd45ff93f6bb # Is Collapsible
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -81,10 +73,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: a677eac8-4b8d-45c6-9eaa-fb2a6d55fc90 # Summary Text
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -98,10 +88,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: dc423ad9-f1dd-4b89-8f72-b8dd4ed977d2 # Content
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

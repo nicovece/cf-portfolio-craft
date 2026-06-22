@@ -5,6 +5,7 @@ entryTypes:
     uid: 19a0c149-8e70-447e-bd63-649c8095c65c # Impressum
 handle: impressum
 maxAuthors: 1
+minAuthors: 1
 name: Impressum
 previewTargets:
   -
